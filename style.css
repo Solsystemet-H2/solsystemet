@@ -12,10 +12,6 @@ body {
     background: -webkit-radial-gradient(center, ellipse cover, #001a3f 0%,#000000 100%);
     background: radial-gradient(ellipse at center, #001a3f 0%,#000000 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001a3f', endColorstr='#000000',GradientType=1 );
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
     overflow: hidden;
 }
 
@@ -219,10 +215,13 @@ body {
   }
 
   #spaceContainer {
-      position: relative;
-      display: inline-block;
-      justify-content: unset;
-      align-items: unset;
+    position: relative;
+    display: block;
+    justify-content: unset;
+    align-items: unset;
+    float: left;
+    clear: both;
+    margin-top: 100px;
   }
 
   .planet {
@@ -243,6 +242,6 @@ body {
   }
 
   #title {
-    margin-bottom: 50px;
+    height: auto !important;
   }
 }
