@@ -29,16 +29,16 @@ $(window).on("load",function(){
 <body id="particles-js">
   <div id="title">Sol Systemet</div>
   <div id="spaceContainer">
-    <img id="sun" class="planet" src="images\planets\sun.png" />
-    <img id="mercury" class="planet" src="images\planets\mercury.png" />
-    <img id="venus" class="planet" src="images\planets\venus.png" />
-    <img id="earth" class="planet" src="images\planets\earth.png" />
-    <img id="mars" class="planet" src="images\planets\mars.png" />
-    <img id="jupiter" class="planet" src="images\planets\jupiter.png" />
-    <img id="saturn" class="planet" src="images\planets\saturn.png" />
-    <img id="uranus" class="planet" src="images\planets\uranus.png" />
-    <img id="neptune" class="planet" src="images\planets\neptune.png" />
-    <img id="pluto" class="planet" src="images\planets\pluto.png" />
+    <div  id="sun" class="planet"><img src="images\planets\sun.png" /><div class="planetName">Solen</div></div>
+    <div id="mercury" class="planet" ><img src="images\planets\mercury.png" /><div class="planetName">Merkur</div></div>
+    <div id="venus" class="planet"><img src="images\planets\venus.png" /><div class="planetName">Venus</div></div>
+    <div id="earth" class="planet"><img src="images\planets\earth.png" /><div class="planetName">Jorden</div></div>
+    <div id="mars" class="planet"><img src="images\planets\mars.png" /><div class="planetName">Mars</div></div>
+    <div id="jupiter" class="planet"><img src="images\planets\jupiter.png" /><div class="planetName">Jupiter</div></div>
+    <div id="saturn" class="planet"><img src="images\planets\saturn.png" /><div class="planetName">Saturn</div></div>
+    <div id="uranus" class="planet"><img src="images\planets\uranus.png" /><div class="planetName">Uranus</div></div>
+    <div id="neptune" class="planet"><img src="images\planets\neptune.png" /><div class="planetName">Neptun</div></div>
+    <div id="pluto" class="planet"><img src="images\planets\pluto.png" /><div class="planetName">Pluto</div></div>
     <div id="orbit1" class="planetOrbit"></div>
     <div id="orbit2" class="planetOrbit"></div>
     <div id="orbit3" class="planetOrbit"></div>
