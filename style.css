@@ -45,99 +45,122 @@ body {
 
 .planet {
     /*transform: rotateX(-70deg);*/
+    width: 15vw;
+    text-align: center;
     position: absolute;
     border-radius: 100%;
     transition: all 80ms ease-in-out;
 }
 
-.planet:hover {
-    /*box-shadow: 0px 0px 20px 3px white;*/
+.planet img{
+      width: 100%;
+      transition: all 80ms ease-in-out;
+}
+
+.planet:not(#sun):hover img {
     cursor: pointer;
     transform:scale(1.25); /* Safari and Chrome /
     -moz-transform:scale(1.25); / Firefox /
     -ms-transform:scale(1.25); / IE 9 /
     -o-transform:scale(1.25); / Opera */
      transform:scale(1.25);
+     margin-bottom: 5px;
 }
 
+
+.planet#sun:hover img {
+    cursor: pointer;
+    transform:scale(1.10); /* Safari and Chrome /
+    -moz-transform:scale(1.10); / Firefox /
+    -ms-transform:scale(1.10); / IE 9 /
+    -o-transform:scale(1.10); / Opera */
+     transform:scale(1.10);
+}
+
+.planetName {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
 #sun {
-    width: 15vw;
     z-index: 9999;
+    width: 11vw;
 }
 
 #mercury {
-    width: 15vw;
     z-index: 9998;
     width: 1.5vw;
     margin-left: -8.2vw;
-    margin-top: -2.2vw;
+    margin-top: -1.1vw;
 }
 
 #venus {
-    width: 15vw;
     z-index: 99979;
     width: 2.5vw;
-    margin-left: 11.2vw;
-    margin-top: -2.3vw;
+    margin-left: 9.6vw;
+    margin-top: -2.1vw;
 }
 
 #earth {
-    width: 15vw;
     z-index: 9996;
     width: 2.5vw;
-    margin-left: 14.6vw;
-    margin-top: 3vw;
+    margin-left: 16.9vw;
+    margin-top: 1.9vw;
 }
 
 #mars {
-    width: 15vw;
+
     z-index: 9995;
     width: 2vw;
     margin-left: -8.5vw;
-    margin-top: 7vw;
+    margin-top: 8vw;
 }
 
 #jupiter {
-    width: 15vw;
     z-index: 9994;
     width: 5vw;
-    margin-left: -20vw;
-    margin-top: -4vw;
+    margin-left: -25vw;
+    margin-top: -3.6vw;
 }
 
 #saturn {
-    width: 15vw;
     z-index: 9993;
     width: 8vw;
     margin-left: 35vw;
 }
 
 #uranus {
-    width: 15vw;
     z-index: 9992;
     width: 2vw;
-    margin-left: -33.3vw;
+    margin-left: -35.3vw;
     margin-top: 8.6vw;
 }
 
 #neptune {
-    width: 15vw;
     z-index: 9991;
     width: 2vw;
     margin-left: -13.9vw;
-    margin-top: 14.6vw;
+    margin-top: 15.4vw;
 }
 
 #pluto {
-    width: 15vw;
     z-index: 9990;
     width: 1vw;
     margin-left: -19.4vw;
-    margin-top: -15vw;
+    margin-top: -14vw;
 }
 
 .planetOrbit {
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 100%;
     position: absolute;
     z-index: 99999;
