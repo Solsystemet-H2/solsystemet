@@ -1,1 +1,192 @@
-ggg
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+
+*:not(fa) {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#001523+0,000000+100 */
+    /* Old browsers */
+    background: #001523;
+    /* FF3.6-15 */
+    background: -moz-radial-gradient(center, ellipse cover, #001523 0%, #000000 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-radial-gradient(center, ellipse cover, #001523 0%, #000000 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: radial-gradient(ellipse at center, #001523 0%, #000000 100%);
+    /* IE6-9 fallback on horizontal gradient */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001523', endColorstr='#000000', GradientType=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+#title {
+  color: white;
+  font-size: 5em;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 25px;
+  height: 100px;
+  margin-bottom: -100px;
+}
+
+#spaceContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /*transform-style: preserve-3d;
+    transform: rotateX(70deg);*/
+}
+
+.planet {
+    /*transform: rotateX(-70deg);*/
+    position: absolute;
+    border-radius: 100%;
+}
+
+.planet:not(#sun):hover {
+    /*box-shadow: 0px 0px 20px 3px white;*/
+    cursor: pointer;
+    transform:scale(1.25); /* Safari and Chrome /
+    -moz-transform:scale(1.25); / Firefox /
+    -ms-transform:scale(1.25); / IE 9 /
+    -o-transform:scale(1.25); / Opera */
+     transform:scale(1.25);
+}
+
+#sun {
+    width: 15vw;
+    z-index: 9999;
+}
+
+#mercury {
+    width: 15vw;
+    z-index: 9998;
+    width: 1.5vw;
+    margin-left: -8.2vw;
+    margin-top: -2.2vw;
+}
+
+#venus {
+    width: 15vw;
+    z-index: 99979;
+    width: 2.5vw;
+    margin-left: 11.2vw;
+    margin-top: -2.3vw;
+}
+
+#earth {
+    width: 15vw;
+    z-index: 9996;
+    width: 2.5vw;
+    margin-left: 14.6vw;
+    margin-top: 3vw;
+}
+
+#mars {
+    width: 15vw;
+    z-index: 9995;
+    width: 2vw;
+    margin-left: -8.5vw;
+    margin-top: 7vw;
+}
+
+#jupiter {
+    width: 15vw;
+    z-index: 9994;
+    width: 5vw;
+    margin-left: -20vw;
+    margin-top: -4vw;
+}
+
+#saturn {
+    width: 15vw;
+    z-index: 9993;
+    width: 8vw;
+    margin-left: 35vw;
+}
+
+#uranus {
+    width: 15vw;
+    z-index: 9992;
+    width: 2vw;
+    margin-left: -33.3vw;
+    margin-top: 8.6vw;
+}
+
+#neptune {
+    width: 15vw;
+    z-index: 9991;
+    width: 2vw;
+    margin-left: -13.9vw;
+    margin-top: 14.6vw;
+}
+
+#pluto {
+    width: 15vw;
+    z-index: 9990;
+    width: 1vw;
+    margin-left: -19.4vw;
+    margin-top: -15vw;
+}
+
+.planetOrbit {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+    position: absolute;
+    z-index: 99999;
+    transform-style: preserve-3d;
+    transform: rotateX(70deg);
+    pointer-events: none;
+}
+
+#orbit1 {
+    width: 20vw;
+    height: 20vw;
+}
+
+#orbit2 {
+    width: 25vw;
+    height: 25vw;
+}
+
+#orbit3 {
+    width: 35vw;
+    height: 35vw;
+}
+
+#orbit4 {
+    width: 45vw;
+    height: 45vw;
+}
+
+#orbit5 {
+    width: 55vw;
+    height: 55vw;
+}
+
+#orbit6 {
+    width: 70vw;
+    height: 70vw;
+}
+
+#orbit7 {
+    width: 85vw;
+    height: 85vw;
+}
+
+#orbit8 {
+    width: 90vw;
+    height: 90vw;
+}
+
+#orbit9 {
+    width: 95vw;
+    height: 95vw;
+}
