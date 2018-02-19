@@ -6,16 +6,12 @@
 
 body {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#001523+0,000000+100 */
-    /* Old browsers */
-    background: #001523;
-    /* FF3.6-15 */
-    background: -moz-radial-gradient(center, ellipse cover, #001523 0%, #000000 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-radial-gradient(center, ellipse cover, #001523 0%, #000000 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    background: radial-gradient(ellipse at center, #001523 0%, #000000 100%);
-    /* IE6-9 fallback on horizontal gradient */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001523', endColorstr='#000000', GradientType=1);
+    background: #001a3f;
+    background: -moz-radial-gradient(center, ellipse cover, #001a3f 0%, #000000 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #001a3f 0%,#000000 100%);
+    background: radial-gradient(ellipse at center, #001a3f 0%,#000000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001a3f', endColorstr='#000000',GradientType=1 );
+
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -48,9 +44,10 @@ body {
     /*transform: rotateX(-70deg);*/
     position: absolute;
     border-radius: 100%;
+    transition: all 80ms ease-in-out;
 }
 
-.planet:not(#sun):hover {
+.planet:hover {
     /*box-shadow: 0px 0px 20px 3px white;*/
     cursor: pointer;
     transform:scale(1.25); /* Safari and Chrome /
