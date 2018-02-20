@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
+*:not(fa) {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#001523+0,000000+100 */
+    /*background: #001a3f !important;
+    background: -moz-radial-gradient(center, ellipse cover, #001a3f 0%, #000000 100%) !important;
+    background: -webkit-radial-gradient(center, ellipse cover, #001a3f 0%,#000000 100%) !important;
+    background: radial-gradient(ellipse at center, #001a3f 0%,#000000 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001a3f', endColorstr='#000000',GradientType=1 ) !important;*/
+}
+
+#particles-js canvas{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#001523+0,000000+100 */
+    background: #001a3f !important;
+    background: -moz-radial-gradient(center, ellipse cover, #001a3f 0%, #000000 100%) !important;
+    background: -webkit-radial-gradient(center, ellipse cover, #001a3f 0%,#000000 100%) !important;
+    background: radial-gradient(ellipse at center, #001a3f 0%,#000000 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001a3f', endColorstr='#000000',GradientType=1 ) !important;
+}
+
+#planetImage{
+  width:100%
+}
+
+#mainContainer{
+  position: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 5%;
+}
+
+#planetName {
+    color: white;
+    font-family: 'Bungee Inline', cursive !important;
+    font-weight: 600;
+}
+
+#planetInfo {
+    color: white;
+}
+
+
+#planetMenu{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  bottom: 0;
+  padding: 25px;
+}
+
+.planet {
+    width: 15vw;
+    text-align: center;
+    border-radius: 100%;
+    transition: all 80ms ease-in-out;
+    z-index: 9999;
+    position: relative;
+    margin: 0px 5px;
+}
+
+.planet img{
+      width: 100%;
+      transition: all 80ms ease-in-out;
+}
+
+.planet:not(#sun):hover img {
+    cursor: pointer;
+    transform:scale(1.25); /* Safari and Chrome /
+    -moz-transform:scale(1.25); / Firefox /
+    -ms-transform:scale(1.25); / IE 9 /
+    -o-transform:scale(1.25); / Opera */
+     transform:scale(1.25);
+     transform-origin: center;
+}
+
+
+.planet#sun:hover img {
+    cursor: pointer;
+    transform:scale(1.10); /* Safari and Chrome /
+    -moz-transform:scale(1.10); / Firefox /
+    -ms-transform:scale(1.10); / IE 9 /
+    -o-transform:scale(1.10); / Opera */
+     transform:scale(1.10);
+}
+
+.planetName {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    display: none;
+}
+
+#sun {
+    width: 5vw;
+    margin: 0px
+}
+
+#mercury {
+    width: 1.5vw;
+}
+
+#venus {
+    width: 2.5vw;
+}
+
+#earth {
+    width: 2.5vw;
+}
+
+#mars {
+    width: 2vw;
+}
+
+#jupiter {
+    width: 5vw;
+}
+
+#saturn {
+    width: 8vw;
+}
+
+#uranus {
+    width: 2vw;
+}
+
+#neptune {
+    width: 2vw;
+}
+
+#pluto {
+    width: 1vw;
+}
