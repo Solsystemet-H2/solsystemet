@@ -223,6 +223,7 @@ body {
     height: 150px;
     overflow: auto;
     font-size: 0.9em;
+    z-index: 99999;
 }
 
 
