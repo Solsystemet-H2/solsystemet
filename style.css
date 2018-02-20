@@ -208,6 +208,24 @@ body {
 }
 
 
+#siteText {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 5px;
+    width: 33%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 25px;
+    height: 150px;
+    overflow: auto;
+    font-size: 0.9em;
+}
+
+
 @media only screen and (max-width: 800px) {
   body{
     overflow: auto;
@@ -241,6 +259,7 @@ body {
 
   #title {
     height: auto !important;
+    margin-bottom: 0px;
   }
 
   #particles-js canvas{
@@ -248,6 +267,15 @@ body {
       width: 100%;
       height: 100%;
       left: 0;
+      top: 0;
       z-index: -1;
+  }
+
+  #siteText{
+    display: block;
+    position: unset;
+    margin: 0 auto;
+    margin-bottom: -100px;
+    width: 75%;
   }
 }

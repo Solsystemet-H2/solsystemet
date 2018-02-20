@@ -14,20 +14,39 @@
     <link rel="stylesheet" href="scripts/bootstrap/css/bootstrap.min.css">
     <script src="scripts\bootstrap\js\bootstrap.min.js"></script>
 
+    <link rel="stylesheet" href="scripts/mCustomScrollbar/mCustomScrollbar.min.css">
+    <script src="scripts\mCustomScrollbar\mCustomScrollbar.min.js"></script>
+
     <link rel="stylesheet" href="scripts/font-awesome/css/font-awesome.min.css">
 
     <script src="scripts\particles.js\particles.min.js"></script>
 
 
 <script>
-$(window).on("load",function(){
+$(function() {
   particlesJS.load('particles-js', 'scripts/particles.js/spaceBG.json', function() {});
+  $("#siteText").mCustomScrollbar({
+    scrollInertia:100,
+    mouseWheel:{ scrollAmount: 50 },
+  });
 });
 </script>
 </head>
 
 <body id="particles-js">
   <div id="title">Sol Systemet</div>
+  <div id="siteText">
+    <?php
+      echo nl2br("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
+      Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
+      mattis at est. Sed auctor metus sapien.
+      Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
+      finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
+      neque velit lacinia nisl.
+
+      Fusce nibh sapien, imperdiet at neque a, mollis euismod mi.");
+    ?>
+  </div>
   <div id="spaceContainer">
     <div  id="sun" class="planet"><img src="images\planets\sun.png" /><div class="planetName">Solen</div></div>
     <div id="mercury" class="planet" ><img src="images\planets\mercury.png" /><div class="planetName">Merkur</div></div>
