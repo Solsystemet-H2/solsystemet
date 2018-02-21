@@ -45,87 +45,22 @@ $(function() {
           <h1 id="planetName">Planet navn</h1>
           <div id="planetInfo">
             <?php
-              echo nl2br("
+              echo nl2br('
               <strong>Lorem:</strong> Ipsum
               <strong>Lorem:</strong> Ipsum
               <strong>Lorem:</strong> Ipsum
               <strong>Lorem:</strong> Ipsum
               <strong>Lorem:</strong> Ipsum
 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-              Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-              mattis at est. Sed auctor metus sapien.
-              Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-              finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-              neque velit lacinia nisl.
-
-              Fusce nibh sapien, imperdiet at neque a, mollis euismod mi.");
+              Solen, vores eneste stjerne i solsystemet.
+Solen er den som er afgørende for næsten alt liv på Jorden.
+Solen er lavet af brint og helium, og ja, det er det der får din stemme til at lyde sjovt.
+Solen er meget vigtig at have da det er den der giver varme og lys.
+Solen er rigtig rigtig rigtig langt væk fra Jorden, faktisk er den så lang væk at der skal 1,4 milliarder fodboldbaner til før du kan komme til solen fra Jorden.
+Men siden Solen er så langt væk så for at den kan varme vores Jord skal den jo også være rigtig varm.
+Solen er ekstrem varm, den er 5.507 grader varm, og det er 55 gange så varmt som når man koger vand og jo varmere noget bliver jo mere skifter det farve.
+Man kan se det på metal, vis du ser et jernrør og nogen varmer det op, så vil det gå fra orange, til rød til hvid, og det er derfor der er hvidt lys udenfor og ikke blåt eller grønt.
+Symbolet for Solen i astronomien er en cirkel med en prik i centrum: ☉. I øvrigt anvendes ordet "sol" også som synonym for "stjerne".');
             ?>
           </div>
         </div>
