@@ -16,7 +16,7 @@ function DbDisconnect($mysqli){
   mysqli_close($mysqli);
 }
 
-function SelectRow($mysqli, $table, $where, $field, $limit, $order){
+function SelectRow($mysqli, $table, $what, $where, $field, $limit, $order){
   $insertWhere = "";
   $insertLimit = "";
   $insertOrder = "";
@@ -31,7 +31,7 @@ function SelectRow($mysqli, $table, $where, $field, $limit, $order){
     $insertOrder = "ORDER BY ".strtoupper($order);
   }
 
-  $query = "SELECT * FROM $table $insertWhere $insertOrder $insertLimit";
+  $query = "SELECT $what FROM $table $insertWhere $insertOrder $insertLimit";
   $result = $mysqli->query($query);
 
   $row = $result->fetch_array(MYSQLI_ASSOC);
@@ -39,6 +39,28 @@ function SelectRow($mysqli, $table, $where, $field, $limit, $order){
   return $row;
 }
 
+function SelectMultipleRows($mysqli, $table, $what, $where, $field, $limit, $order){
+  $insertWhere = "";
+  $insertLimit = "";
+  $insertOrder = "";
+
+  if($where != "" && $field != ""){
+    $insertWhere = "WHERE LOWER($where) = LOWER('$field')";
+  }
+  if($limit != ""){
+    $insertLimit = "LIMIT $limit";
+  }
+  if($order != ""){
+    $insertOrder = "ORDER BY ".strtoupper($order);
+  }
+
+  $query = "SELECT $what FROM $table $insertWhere $insertOrder $insertLimit";
+  $result = $mysqli->query($query);
+
+  //$row = $result->fetch_array(MYSQLI_ASSOC);
+
+  return $result;
+}
 
 /*$connect = DbConnect("localhost","root","","solsystemdb");
 $row = SelectRow($connect, "planet", "Name", "Solen", "", "");

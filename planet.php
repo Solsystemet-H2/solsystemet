@@ -2,7 +2,8 @@
   include("config.php");
 
   $connect = DbConnect("localhost","root","","solsystemdb");
-  $planet = SelectRow($connect, "planet", "ID", $_GET["id"], "", "");
+  $planet = SelectRow($connect, "planet", "*", "ID", $_GET["id"], "", "");
+  $planet2 = SelectMultipleRows($connect, "planet", "*", "", "", "", "");
 
 ?>
 <!DOCTYPE html>
@@ -51,6 +52,14 @@ $(function() {
         <div id="planetInfoContainer" class="col-md-6 col-sm-12 editable">
           <h1 id="planetName"><?php echo $planet["Name"]; ?></h1>
           <div id="planetInfo">
+
+            <?php
+            $i = 0;
+            while($row = $planet2->fetch_array(MYSQLI_ASSOC)){
+              $i++;
+            }
+            echo $i;
+            ?>
             <table id="planetFacts">
               <tr>
                 <td>Størrelse:</td>
