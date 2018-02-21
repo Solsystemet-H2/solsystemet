@@ -1,3 +1,10 @@
+<?php
+  include("config.php");
+
+  $connect = DbConnect("localhost","root","","solsystemdb");
+  $planet = SelectRow($connect, "planet", "Name", "Solen", "", "");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sol Systemet - Planet navn</title>
+    <title>Sol Systemet - <?php echo $planet["name"]; ?></title>
 
     <link rel="stylesheet" href="planetStyle.css">
 
@@ -42,25 +49,28 @@ $(function() {
           <img title="Planet Navn" alt="Planet Navn" id="planetImage" src="images/planetsRealistic/mars.png" />
         </div>
         <div id="planetInfoContainer" class="col-md-6 col-sm-12 editable">
-          <h1 id="planetName">Planet navn</h1>
+          <h1 id="planetName"><?php echo $planet["Name"]; ?></h1>
           <div id="planetInfo">
+            <table id="planetFacts">
+              <tr>
+                <td>Størrelse:</td>
+                <td><?php echo $planet["Size"]; ?></td>
+              </tr>
+              <tr>
+                <td>Vægt:</td>
+                <td><?php echo $planet["Mass"]; ?></td>
+              </tr>
+              <tr>
+                <td>Tyngdekraft:</td>
+                <td><?php echo $planet["Gravity"]; ?></td>
+              <tr>
+              </tr>
+                <td>Distance fra solen:</td>
+                <td><?php echo $planet["DistanceFromSun"]; ?></td>
+              </tr>
+            </table>
             <?php
-              echo nl2br('
-              <strong>Lorem:</strong> Ipsum
-              <strong>Lorem:</strong> Ipsum
-              <strong>Lorem:</strong> Ipsum
-              <strong>Lorem:</strong> Ipsum
-              <strong>Lorem:</strong> Ipsum
-
-              Solen, vores eneste stjerne i solsystemet.
-Solen er den som er afgørende for næsten alt liv på Jorden.
-Solen er lavet af brint og helium, og ja, det er det der får din stemme til at lyde sjovt.
-Solen er meget vigtig at have da det er den der giver varme og lys.
-Solen er rigtig rigtig rigtig langt væk fra Jorden, faktisk er den så lang væk at der skal 1,4 milliarder fodboldbaner til før du kan komme til solen fra Jorden.
-Men siden Solen er så langt væk så for at den kan varme vores Jord skal den jo også være rigtig varm.
-Solen er ekstrem varm, den er 5.507 grader varm, og det er 55 gange så varmt som når man koger vand og jo varmere noget bliver jo mere skifter det farve.
-Man kan se det på metal, vis du ser et jernrør og nogen varmer det op, så vil det gå fra orange, til rød til hvid, og det er derfor der er hvidt lys udenfor og ikke blåt eller grønt.
-Symbolet for Solen i astronomien er en cirkel med en prik i centrum: ☉. I øvrigt anvendes ordet "sol" også som synonym for "stjerne".');
+              echo nl2br($planet["Descreption"]);
             ?>
           </div>
         </div>
@@ -112,3 +122,6 @@ Symbolet for Solen i astronomien er en cirkel med en prik i centrum: ☉. I øvr
 </body>
 
 </html>
+<?php
+  DbDisconnect($connect);
+?>

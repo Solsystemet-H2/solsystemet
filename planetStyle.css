@@ -153,3 +153,14 @@ body {
 #pluto {
     width: 1vw;
 }
+
+#planetFacts {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#planetFacts td:nth-child(odd) {
+    font-weight: 600;
+    padding-right: 50px;
+    padding-bottom: 5px;
+}
