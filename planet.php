@@ -2,7 +2,7 @@
   include("config.php");
 
   $connect = DbConnect("localhost","root","","solsystemdb");
-  $planet = SelectRow($connect, "planet", "Name", "Solen", "", "");
+  $planet = SelectRow($connect, "planet", "ID", $_GET["id"], "", "");
 
 ?>
 <!DOCTYPE html>
@@ -46,7 +46,7 @@ $(function() {
     <div class="container">
       <div class="row">
         <div id="planetImageContainer" class="col-md-6 col-sm-12 editable">
-          <img title="Planet Navn" alt="Planet Navn" id="planetImage" src="images/planetsRealistic/mars.png" />
+          <img title="Planet Navn" alt="Planet Navn" id="planetImage" src="<?php echo $planet["RealisticImage"]; ?>" />
         </div>
         <div id="planetInfoContainer" class="col-md-6 col-sm-12 editable">
           <h1 id="planetName"><?php echo $planet["Name"]; ?></h1>
