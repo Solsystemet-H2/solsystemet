@@ -1,5 +1,4 @@
 <?php
-//"localhost","root","","solsystemdb"
 function dbConnect($host, $user, $pass, $database){
   $mysqli=mysqli_connect($host, $user, $pass, $database);
   $mysqli->set_charset('utf8');
@@ -34,17 +33,11 @@ function selectRow($mysqli, $table, $what, $where, $field, $limit, $order, $mult
   $query = "SELECT $what FROM $table $insertWhere $insertOrder $insertLimit";
   $result = $mysqli->query($query);
 
-  $row = $result->fetch_array(MYSQLI_ASSOC);
   if ($multiple == true) {
     return $result;
   }else{
+    $row = $result->fetch_array(MYSQLI_ASSOC);
     return $row;
   }
 }
-
-/*$connect = DbConnect("localhost","root","","solsystemdb");
-$row = SelectRow($connect, "planet", "Name", "Solen", "", "");
-
-echo $row["Descreption"];
-DbDisconnect($connect);*/
 ?>

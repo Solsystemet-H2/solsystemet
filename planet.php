@@ -51,14 +51,6 @@ $(function() {
         <div id="planetInfoContainer" class="col-md-6 col-sm-12 editable">
           <h1 id="planetName"><?php echo $planet["Name"]; ?></h1>
           <div id="planetInfo">
-            <?php
-            $i = 0;
-            while($row = $planet2->fetch_array(MYSQLI_ASSOC)){
-              $i++;
-              echo $row["Name"]."<br />";
-            }
-            echo $i;
-            ?>
             <table id="planetFacts">
               <tr>
                 <td>Størrelse:</td>
