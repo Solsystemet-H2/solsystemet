@@ -6,7 +6,7 @@
   $planetMenu = selectRow($connect, "planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -39,7 +39,7 @@ $(function() {
   });
 
   var currID = GetURLParameter("id");
-  
+
   $("#prevPlanet").on("click",function(){
     window.location = "planet.php?id="+$(this).attr("id");
   });
