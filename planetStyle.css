@@ -183,3 +183,9 @@ div#nextPlanet {
     position: absolute;
     right: 25px;
 }
+
+#quizFrame {
+  margin-top: 10%;
+  width: 50%;
+
+}
