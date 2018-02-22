@@ -1,9 +1,9 @@
 <?php
   include("config.php");
 
-  $connect = dbConnect("localhost","root","","solsystemdb");
-  $planet = selectRow($connect, "planet", "*", "ID", $_GET["id"], "", "", "");
-  $planet2 = selectRow($connect, "planet", "*", "", "", "", "", true);
+  $connect = dbConnect("localhost","root","","solsystemdb2");
+  $planet = selectRow($connect, "planet", "*", "ID", $_GET["id"], "", "", "", "");
+  $planetMenu = selectRow($connect, "planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,13 +37,35 @@ $(function() {
     scrollInertia:100,
     mouseWheel:{ scrollAmount: 50 },
   });
+
+  var currID = GetURLParameter("id");
+  
+  $("#prevPlanet").on("click",function(){
+    window.location = "planet.php?id="+$(this).attr("id");
+  });
 });
+
+
+function GetURLParameter(param){
+    var pageURL = window.location.search.substring(1);
+    var urlVariables = pageURL.split('&');
+    for (var i = 0; i < urlVariables.length; i++){
+        var parameterName = urlVariables[i].split('=');
+        if (parameterName[0] == param){
+            return parameterName[1];
+        }
+    }
+}
 </script>
 </head>
 
 <body id="particles-js">
-  <div id="prevPlanet" class="planetNavigateBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-  <div id="nextPlanet" class="planetNavigateBtn"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+  <div id="planetNavigateContainer">
+    <div id="planetNavigateCenter">
+      <div id="prevPlanet" class="planetNavigateBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+      <div id="nextPlanet" class="planetNavigateBtn"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+    </div>
+  </div>
   <div id="mainContainer">
     <div class="container">
       <div class="row">
@@ -72,7 +94,7 @@ $(function() {
               </tr>
             </table>
             <?php
-              echo nl2br($planet["Descreption"]);
+              echo nl2br($planet["Description"]);
             ?>
           </div>
         </div>
@@ -80,7 +102,7 @@ $(function() {
     </div>
   </div>
   <?php
-    generatePlanetMenu($planet2);
+    generatePlanetMenu($planetMenu);
   ?>
 </body>
 

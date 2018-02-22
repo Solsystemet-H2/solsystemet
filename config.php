@@ -15,7 +15,7 @@ function dbDisconnect($mysqli){
   mysqli_close($mysqli);
 }
 
-function selectRow($mysqli, $table, $what, $where, $field, $limit, $order, $multiple){
+function selectRow($mysqli, $table, $what, $where, $field, $limit, $orderby, $orderType, $multiple){
   $insertWhere = "";
   $insertLimit = "";
   $insertOrder = "";
@@ -26,8 +26,8 @@ function selectRow($mysqli, $table, $what, $where, $field, $limit, $order, $mult
   if($limit != ""){
     $insertLimit = "LIMIT $limit";
   }
-  if($order != ""){
-    $insertOrder = "ORDER BY ".strtoupper($order);
+  if($orderby != "" && $orderType != ""){
+    $insertOrder = "ORDER BY ".$orderby." ".strtoupper($orderType);
   }
 
   $query = "SELECT $what FROM $table $insertWhere $insertOrder $insertLimit";

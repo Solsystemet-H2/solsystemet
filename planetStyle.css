@@ -6,9 +6,6 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #particles-js canvas{
@@ -160,4 +157,29 @@ body {
     font-weight: 600;
     padding-right: 50px;
     padding-bottom: 5px;
+}
+
+#planetNavigateContainer {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planetNavigateBtn {
+    color: white;
+    font-size: 4em;
+}
+
+div#prevPlanet {
+    position: absolute;
+    left: 25px;
+}
+
+div#nextPlanet {
+    position: absolute;
+    right: 25px;
 }
