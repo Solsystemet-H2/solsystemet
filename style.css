@@ -263,11 +263,4 @@ body {
     margin-bottom: -100px;
     width: 75%;
   }
-
-  iframe {
-    scroling: no;
-    width: 1000px;
-    margin: 0 auto;
-
-  }
 }

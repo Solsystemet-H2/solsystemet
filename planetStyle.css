@@ -6,12 +6,9 @@
 }
 
 body {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#001523+0,000000+100 */
-    /*background: #001a3f !important;
-    background: -moz-radial-gradient(center, ellipse cover, #001a3f 0%, #000000 100%) !important;
-    background: -webkit-radial-gradient(center, ellipse cover, #001a3f 0%,#000000 100%) !important;
-    background: radial-gradient(ellipse at center, #001a3f 0%,#000000 100%) !important;
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001a3f', endColorstr='#000000',GradientType=1 ) !important;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #particles-js canvas{
