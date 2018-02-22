@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sol Systemet - <?php echo $planet["name"]; ?></title>
+    <title>Sol Systemet - <?php echo $planet["Name"]; ?></title>
 
     <link rel="stylesheet" href="planetStyle.css">
 
@@ -42,6 +42,8 @@ $(function() {
 </head>
 
 <body id="particles-js">
+  <div id="prevPlanet" class="planetNavigateBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+  <div id="nextPlanet" class="planetNavigateBtn"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
   <div id="mainContainer">
     <div class="container">
       <div class="row">
@@ -77,48 +79,9 @@ $(function() {
       </div>
     </div>
   </div>
-  <div id="planetMenu">
-    <div id="sun" class="planet">
-      <img title="Solen" alt="Solen" src="images\planets\sun.png" />
-      <div class="planetName">Solen</div>
-    </div>
-    <div id="mercury" class="planet" >
-      <img title="Merkur" alt="Merkur" src="images\planets\mercury.png" />
-      <div class="planetName">Merkur</div>
-    </div>
-    <div id="venus" class="planet">
-      <img title="Venus" alt="Venus" src="images\planets\venus.png" />
-      <div class="planetName">Venus</div>
-    </div>
-    <div id="earth" class="planet">
-      <img title="Jorden" alt="Jorden" src="images\planets\earth.png" />
-      <div class="planetName">Jorden</div>
-    </div>
-    <div id="mars" class="planet">
-      <img title="Mars" alt="Mars" src="images\planets\mars.png" />
-      <div class="planetName">Mars</div>
-    </div>
-    <div id="jupiter" class="planet">
-      <img title="Jupiter" alt="Jupiter" src="images\planets\jupiter.png" />
-      <div class="planetName">Jupiter</div>
-    </div>
-    <div id="saturn" class="planet">
-      <img title="Saturn" alt="Saturn" src="images\planets\saturn.png" />
-      <div class="planetName">Saturn</div>
-    </div>
-    <div id="uranus" class="planet">
-      <img title="Uranus" alt="Uranus" src="images\planets\uranus.png" />
-      <div class="planetName">Uranus</div>
-    </div>
-    <div id="neptune" class="planet">
-      <img title="Neptun" alt="Neptun" src="images\planets\neptune.png" />
-      <div class="planetName">Neptun</div>
-    </div>
-    <div id="pluto" class="planet">
-      <img title="Pluto" alt="Pluto" src="images\planets\pluto.png" />
-      <div class="planetName">Pluto</div>
-    </div>
-  </div>
+  <?php
+    generatePlanetMenu($planet2);
+  ?>
 </body>
 
 </html>

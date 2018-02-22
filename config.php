@@ -40,4 +40,21 @@ function selectRow($mysqli, $table, $what, $where, $field, $limit, $order, $mult
     return $row;
   }
 }
+
+function generatePlanetMenu($mysqliResult){
+  ?>
+  <div id="planetMenu">
+    <?php
+    while($row = $mysqliResult->fetch_array(MYSQLI_ASSOC)){
+      ?>
+      <div id="<?php echo $row["StyleID"];?>" class="planet" onclick="window.location = 'planet.php?id=<?php echo $row["ID"];?>'">
+      <img title="<?php echo $row["Name"];?>" alt="<?php echo $row["Name"];?>" src="<?php echo $row["CartoonImage"];?>" />
+      <div class="planetName"><?php echo $row["Name"];?></div>
+      </div>
+      <?php
+    }
+    ?>
+  </div>
+  <?php
+}
 ?>
