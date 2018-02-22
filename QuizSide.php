@@ -7,7 +7,7 @@
 
     <title>Sol Systemet</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="planetStyle.css">
 
     <script src="scripts/jquery-3.2.1.min.js"></script>
 
@@ -33,15 +33,21 @@
       $(".planet").on("click",function(){
         window.location = "planet.php?id="+$(this).attr("id");
       });
+
+
+      window.addEventListener("message", function (event) {
+        document.getElementById("quizFrame").style.height = event.data;
+      });
+
     });
     </script>
 </head>
-<body id="particles-js">
+<body id="particles-js" class="centerMe">
 
 
 
 
-<iframe src="quiz.php"></iframe>
+<iframe id="quizFrame" src="quiz.php"></iframe>
 
 
 </body>

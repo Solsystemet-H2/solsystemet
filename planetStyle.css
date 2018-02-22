@@ -189,3 +189,9 @@ div#nextPlanet {
   width: 50%;
 
 }
+
+.centerMe{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -11,9 +11,22 @@
 <link href="scripts/slickSquiz/CSS/master.css" media="screen" rel="stylesheet" type="text/css">
 
 
-<script>$(function () {
+<script>
+$(function () {
     $('#spaceQuiz').slickQuiz();
-});</script>
+
+    window.addEventListener("resize", function () {
+        resizeNotify();
+    });
+    $("body").on("click",function(){
+      resizeNotify();
+    });
+});
+
+function resizeNotify() {
+    parent.postMessage($('body').height() + "px", "*");
+}
+</script>
 
 </head>
 <body id="spaceQuiz">
