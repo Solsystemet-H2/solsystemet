@@ -2,11 +2,11 @@
   include("config.php");
 
   $connect = dbConnect("127.0.0.1","root","pass","solsystemDB");
-  $planet = selectRow($connect, "planet", "*", "PlanetsOrder", $_GET["id"], "", "", "", "");
-  $planetMenu = selectRow($connect, "planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
+  $planet = selectRow($connect, "Planet", "*", "PlanetsOrder", $_GET["id"], "", "", "", "");
+  $planetMenu = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
 
-  $lowestPlanet = selectRow($connect, "planet", "*", "", "", "1", "PlanetsOrder", "ASC", "");
-  $higestPlanet = selectRow($connect, "planet", "*", "", "", "1", "PlanetsOrder", "DESC", "");
+  $lowestPlanet = selectRow($connect, "Planet", "*", "", "", "1", "PlanetsOrder", "ASC", "");
+  $higestPlanet = selectRow($connect, "Planet", "*", "", "", "1", "PlanetsOrder", "DESC", "");
 ?>
 <!DOCTYPE html>
 <html>
