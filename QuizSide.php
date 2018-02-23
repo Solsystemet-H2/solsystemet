@@ -47,7 +47,7 @@
 
 
 
-<iframe id="quizFrame" src="quiz.php"></iframe>
+<iframe id="quizFrame" src="quiz.php" style="border:0px;"></iframe>
 
 
 </body>

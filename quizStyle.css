@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
+*:not(.fa) {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+body {
+  margin:0px !important;
+  padding:0px !important;
+  border:none !important;
+  overflow:hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
