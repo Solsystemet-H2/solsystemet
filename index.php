@@ -1,5 +1,8 @@
 <?php
 include("config.php");
+
+$connect = dbConnect("localhost","root","","solsystemdb2");
+$site = selectRow($connect, "site", "*", "ID", "1", "", "", "", "");
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +37,7 @@ $(function() {
   });
 
   $(".planet").on("click",function(){
-    window.location = "planet.php?id="+$(this).attr("id");
+    window.location = "planet.php?id="+$(this).attr("planetOrder");
   });
 });
 </script>
@@ -44,54 +47,47 @@ $(function() {
   <div id="title">Sol Systemet</div>
   <div id="siteText">
     <?php
-      echo nl2br("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-      Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-      mattis at est. Sed auctor metus sapien.
-      Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-      finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-      neque velit lacinia nisl.
-
-      Fusce nibh sapien, imperdiet at neque a, mollis euismod mi.");
+      echo nl2br($site["Content"]);
     ?>
   </div>
   <div id="spaceContainer">
-    <div id="sun" class="planet">
+    <div id="sun" planetOrder="1" class="planet">
       <img title="Solen" alt="Solen" src="images\planets\sun.png" />
       <div class="planetName">Solen</div>
     </div>
-    <div id="mercury" class="planet" >
+    <div id="mercury" planetOrder="2" class="planet" >
       <img title="Merkur" alt="Merkur" src="images\planets\mercury.png" />
       <div class="planetName">Merkur</div>
     </div>
-    <div id="venus" class="planet">
+    <div id="venus" planetOrder="3" class="planet">
       <img title="Venus" alt="Venus" src="images\planets\venus.png" />
       <div class="planetName">Venus</div>
     </div>
-    <div id="earth" class="planet">
+    <div id="earth" planetOrder="4" class="planet">
       <img title="Jorden" alt="Jorden" src="images\planets\earth.png" />
       <div class="planetName">Jorden</div>
     </div>
-    <div id="mars" class="planet">
+    <div id="mars" planetOrder="5" class="planet">
       <img title="Mars" alt="Mars" src="images\planets\mars.png" />
       <div class="planetName">Mars</div>
     </div>
-    <div id="jupiter" class="planet">
+    <div id="jupiter" planetOrder="6" class="planet">
       <img title="Jupiter" alt="Jupiter" src="images\planets\jupiter.png" />
       <div class="planetName">Jupiter</div>
     </div>
-    <div id="saturn" class="planet">
+    <div id="saturn" planetOrder="7" class="planet">
       <img title="Saturn" alt="Saturn" src="images\planets\saturn.png" />
       <div class="planetName">Saturn</div>
     </div>
-    <div id="uranus" class="planet">
+    <div id="uranus" planetOrder="8" class="planet">
       <img title="Uranus" alt="Uranus" src="images\planets\uranus.png" />
       <div class="planetName">Uranus</div>
     </div>
-    <div id="neptune" class="planet">
+    <div id="neptune" planetOrder="9" class="planet">
       <img title="Neptun" alt="Neptun" src="images\planets\neptune.png" />
       <div class="planetName">Neptun</div>
     </div>
-    <div id="pluto" class="planet">
+    <div id="pluto" planetOrder="10" class="planet">
       <img title="Pluto" alt="Pluto" src="images\planets\pluto.png" />
       <div class="planetName">Pluto</div>
     </div>
@@ -108,3 +104,6 @@ $(function() {
 </body>
 
 </html>
+<?php
+  dbDisconnect($connect);
+?>
