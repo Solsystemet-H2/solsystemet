@@ -101,7 +101,7 @@ function GetURLParameter(param){
     <div class="container">
       <div class="row">
         <div id="planetImageContainer" class="col-md-6 col-sm-12 editable">
-          <img title="Planet Navn" alt="Planet Navn" id="planetImage" src="<?php echo $planet["RealisticImage"]; ?>" />
+          <img title="<?php echo $planet["Name"]; ?>" alt="<?php echo $planet["Name"]; ?>" id="planetImage" src="<?php echo $planet["RealisticImage"]; ?>" />
         </div>
         <div id="planetInfoContainer" class="col-md-6 col-sm-12 editable">
           <h1 id="planetName"><?php echo $planet["Name"]; ?></h1>
