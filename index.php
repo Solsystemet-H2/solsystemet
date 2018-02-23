@@ -1,7 +1,8 @@
 <?php
+ini_set('display_errors', 1);
 include("config.php");
 
-//$connect = dbConnect("localhost","root","pass","solsystemDB");
+$connect = dbConnect("localhost","root","pass","solsystemDB");
 $site = selectRow($connect, "site", "*", "ID", "1", "", "", "", "");
 ?>
 <!DOCTYPE html>
