@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="stylesheet" href="scripts/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="scripts/font-awesome/css/font-awesome.min.css">
+
 <script src="scripts/slickSquiz/JS/jquery-1.7.min.js"></script>
 <script src="scripts/slickSquiz/JS/slickQuiz-config.js"></script>
 <script src="scripts/slickSquiz/JS/slickQuiz.js"></script>
@@ -36,12 +40,12 @@ function resizeNotify() {
     <h1 class="quizName"></h1>
     <div class="quizArea">
         <div class="quizHeader">
-            <a class="startQuiz" href="">Get Started!</a>
+            <a class="startQuiz btn btn-info btn-lg" href="">Start quizzen <i class="fa fa-rocket" aria-hidden="true"></i></a>
         </div>
     </div>
     <div class="quizResults">
-        <h3 class="quizScore">You Scored: <span></span></h3>
-        <h3 class="quizLevel"><strong>Ranking:</strong> <span></span></h3>
+        <h3 class="quizScore">Dit resultat: <span></span></h3>
+        <h3 class="quizLevel"><strong>Satus:</strong> <span></span></h3>
         <div class="quizResultsCopy"></div>
     </div>
   </div>
