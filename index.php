@@ -1,8 +1,8 @@
 <?php
-include("config.php");
+/*include("config.php");
 
 $connect = dbConnect("localhost","root","pass","solsystemDB");
-$site = selectRow($connect, "site", "*", "ID", "1", "", "", "", "");
+$site = selectRow($connect, "site", "*", "ID", "1", "", "", "", "");*/
 ?>
 <!DOCTYPE html>
 <html>
