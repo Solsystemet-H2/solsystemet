@@ -60,6 +60,7 @@ function GetURLParameter(param){
 </head>
 
 <body id="particles-js">
+  <div id="backBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i>Tilbage til solsystemet</div>
   <div id="planetNavigateContainer">
     <div id="planetNavigateCenter">
       <div id="prevPlanet" class="planetNavigateBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>

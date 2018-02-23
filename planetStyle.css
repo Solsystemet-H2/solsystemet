@@ -195,3 +195,20 @@ div#nextPlanet {
   justify-content: center;
   align-items: center;
 }
+
+#backBtn {
+    color: white;
+    font-size: 1.2em;
+    position: fixed;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+#backBtn .fa {
+    margin-right: 10px;
+    transition: all 200ms ease-in-out;
+}
+
+#backBtn:hover .fa {
+    margin-right: 15px;
+}

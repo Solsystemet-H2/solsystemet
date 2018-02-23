@@ -1,5 +1,8 @@
 <?php
 include("config.php");
+
+$connect = dbConnect("localhost","root","","solsystemdb2");
+$site = selectRow($connect, "site", "*", "ID", "1", "", "", "", "");
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,14 +47,7 @@ $(function() {
   <div id="title">Sol Systemet</div>
   <div id="siteText">
     <?php
-      echo nl2br("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in velit a magna molestie porta ac nec justo.
-      Suspendisse posuere accumsan nisi id pharetra. Sed augue purus, commodo et feugiat et,
-      mattis at est. Sed auctor metus sapien.
-      Vehicula nulla tempor id. Donec dignissim risus sit amet imperdiet pharetra. Vivamus quam elit,
-      finibus eget leo a, ornare laoreet diam. Mauris iaculis, libero sed hendrerit molestie,
-      neque velit lacinia nisl.
-
-      Fusce nibh sapien, imperdiet at neque a, mollis euismod mi.");
+      echo nl2br($site["Content"]);
     ?>
   </div>
   <div id="spaceContainer">
@@ -108,3 +104,6 @@ $(function() {
 </body>
 
 </html>
+<?php
+  dbDisconnect($connect);
+?>
