@@ -172,6 +172,7 @@ body {
 .planetNavigateBtn {
     color: white;
     font-size: 4em;
+    transition:all 120ms ease-in-out;
 }
 
 .planetNavigateBtn:hover {
