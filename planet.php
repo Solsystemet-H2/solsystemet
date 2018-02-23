@@ -1,7 +1,7 @@
 <?php
   include("config.php");
 
-  $connect = dbConnect("localhost","root","pass","solsystemdb");
+  $connect = dbConnect("localhost","root","pass","solsystemDB");
   $planet = selectRow($connect, "planet", "*", "PlanetsOrder", $_GET["id"], "", "", "", "");
   $planetMenu = selectRow($connect, "planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
 
