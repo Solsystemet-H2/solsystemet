@@ -174,14 +174,21 @@ body {
     font-size: 4em;
 }
 
-div#prevPlanet {
-    position: absolute;
-    left: 25px;
+.planetNavigateBtn:hover {
+    margin-top: -0.1em;
+    font-size: 5em;
 }
 
-div#nextPlanet {
+#prevPlanet {
+    position: absolute;
+    left: 25px;
+    cursor: pointer;
+}
+
+#nextPlanet {
     position: absolute;
     right: 25px;
+    cursor: pointer;
 }
 
 #quizFrame {

@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 
-$connect = dbConnect("localhost","root","","solsystemdb2");
+$connect = dbConnect("localhost","root","pass","solsystemdb");
 $site = selectRow($connect, "site", "*", "ID", "1", "", "", "", "");
 ?>
 <!DOCTYPE html>

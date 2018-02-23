@@ -1,9 +1,12 @@
 <?php
   include("config.php");
 
-  $connect = dbConnect("localhost","root","","solsystemdb2");
-  $planet = selectRow($connect, "planet", "*", "ID", $_GET["id"], "", "", "", "");
+  $connect = dbConnect("localhost","root","pass","solsystemdb");
+  $planet = selectRow($connect, "planet", "*", "PlanetsOrder", $_GET["id"], "", "", "", "");
   $planetMenu = selectRow($connect, "planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
+
+  $lowestPlanet = selectRow($connect, "planet", "*", "", "", "1", "PlanetsOrder", "ASC", "");
+  $higestPlanet = selectRow($connect, "planet", "*", "", "", "1", "PlanetsOrder", "DESC", "");
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,6 +33,10 @@
 
 
 <script>
+var currID;
+var minPlanetOrder;
+var maxPlanetOrder;
+
 $(function() {
   particlesJS.load('particles-js', 'scripts/particles.js/spaceBG.json', function() {});
 
@@ -38,10 +45,33 @@ $(function() {
     mouseWheel:{ scrollAmount: 50 },
   });
 
-  var currID = GetURLParameter("id");
-
   $("#prevPlanet").on("click",function(){
     window.location = "planet.php?id="+$(this).attr("id");
+  });
+
+  currID = parseInt(GetURLParameter("id"));
+
+  minPlanetOrder = <?php echo $lowestPlanet["PlanetsOrder"]; ?>;
+  maxPlanetOrder = <?php echo $higestPlanet["PlanetsOrder"]; ?>;
+
+  if(currID == minPlanetOrder){
+    $("#prevPlanet").hide();
+  }
+  if(currID == maxPlanetOrder){
+    $("#nextPlanet").hide();
+  }
+
+  $("#prevPlanet").on("click",function(){
+    if(currID > minPlanetOrder){
+      currID--;
+      window.location = "planet.php?id="+currID;
+    }
+  });
+  $("#nextPlanet").on("click",function(){
+    if(currID < maxPlanetOrder){
+      currID++;
+      window.location = "planet.php?id="+currID;
+    }
   });
 });
 
