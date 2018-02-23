@@ -199,16 +199,24 @@ div#nextPlanet {
 #backBtn {
     color: white;
     font-size: 1.2em;
-    position: fixed;
     margin-left: 25px;
+    margin-top: 50px;
+    margin-bottom: -50px;
+    position: relative;
+    z-index: 99999999;
     cursor: pointer;
 }
 
 #backBtn .fa {
     margin-right: 10px;
-    transition: all 200ms ease-in-out;
+    transition: all 120ms ease-in-out;
 }
 
 #backBtn:hover .fa {
     margin-right: 15px;
+}
+
+#backBtn a {
+    color: white !important;
+    text-decoration: none !important;
 }
