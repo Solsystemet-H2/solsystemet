@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 include("config.php");
 
-$connect = dbConnect("localhost","root","","solsystemdb");
+$connect = dbConnect("localhost","root","pass","solsystemDB");
 $site = selectRow($connect, "Site", "*", "ID", "1", "", "", "", "");
 ?>
 <!DOCTYPE html>
