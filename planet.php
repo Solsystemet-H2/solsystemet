@@ -1,9 +1,12 @@
 <?php
   include("config.php");
 
-  $connect = dbConnect("localhost","root","","solsystemdb2");
-  $planet = selectRow($connect, "planet", "*", "ID", $_GET["id"], "", "", "", "");
-  $planetMenu = selectRow($connect, "planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
+  $connect = dbConnect("127.0.0.1","root","pass","solsystemDB");
+  $planet = selectRow($connect, "Planet", "*", "PlanetsOrder", $_GET["id"], "", "", "", "");
+  $planetMenu = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
+
+  $lowestPlanet = selectRow($connect, "Planet", "*", "", "", "1", "PlanetsOrder", "ASC", "");
+  $higestPlanet = selectRow($connect, "Planet", "*", "", "", "1", "PlanetsOrder", "DESC", "");
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,6 +33,10 @@
 
 
 <script>
+var currID;
+var minPlanetOrder;
+var maxPlanetOrder;
+
 $(function() {
   particlesJS.load('particles-js', 'scripts/particles.js/spaceBG.json', function() {});
 
@@ -38,10 +45,33 @@ $(function() {
     mouseWheel:{ scrollAmount: 50 },
   });
 
-  var currID = GetURLParameter("id");
-
   $("#prevPlanet").on("click",function(){
     window.location = "planet.php?id="+$(this).attr("id");
+  });
+
+  currID = parseInt(GetURLParameter("id"));
+
+  minPlanetOrder = <?php echo $lowestPlanet["PlanetsOrder"]; ?>;
+  maxPlanetOrder = <?php echo $higestPlanet["PlanetsOrder"]; ?>;
+
+  if(currID == minPlanetOrder){
+    $("#prevPlanet").hide();
+  }
+  if(currID == maxPlanetOrder){
+    $("#nextPlanet").hide();
+  }
+
+  $("#prevPlanet").on("click",function(){
+    if(currID > minPlanetOrder){
+      currID--;
+      window.location = "planet.php?id="+currID;
+    }
+  });
+  $("#nextPlanet").on("click",function(){
+    if(currID < maxPlanetOrder){
+      currID++;
+      window.location = "planet.php?id="+currID;
+    }
   });
 });
 
@@ -71,7 +101,7 @@ function GetURLParameter(param){
     <div class="container">
       <div class="row">
         <div id="planetImageContainer" class="col-md-6 col-sm-12 editable">
-          <img title="Planet Navn" alt="Planet Navn" id="planetImage" src="<?php echo $planet["RealisticImage"]; ?>" />
+          <img title="<?php echo $planet["Name"]; ?>" alt="<?php echo $planet["Name"]; ?>" id="planetImage" src="<?php echo $planet["RealisticImage"]; ?>" />
         </div>
         <div id="planetInfoContainer" class="col-md-6 col-sm-12 editable">
           <h1 id="planetName"><?php echo $planet["Name"]; ?></h1>
