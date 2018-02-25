@@ -202,6 +202,7 @@ body {
 #quizFrame {
   margin-top: 10%;
   width: 50%;
+  min-width: 800px;
 
 }
 
