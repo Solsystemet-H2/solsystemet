@@ -1,7 +1,7 @@
 <?php
   include("config.php");
 
-  $connect = dbConnect("127.0.0.1","root","pass","solsystemDB");
+  $connect = dbConnect("localhost","root","","solsystemdb");
   $planet = selectRow($connect, "Planet", "*", "PlanetsOrder", $_GET["id"], "", "", "", "");
   $planetMenu = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
 
@@ -97,14 +97,18 @@ function GetURLParameter(param){
       <div id="nextPlanet" class="planetNavigateBtn"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
     </div>
   </div>
-  <div id="mainContainer">
+
     <div class="container">
+      <div class="row">
+        <div id="titleContainer" class="col-md-12 col-sm-12 editable">
+          <h1 id="planetName"><?php echo $planet["Name"]; ?></h1>
+        </div>
+      </div>
       <div class="row">
         <div id="planetImageContainer" class="col-md-6 col-sm-12 editable">
           <img title="<?php echo $planet["Name"]; ?>" alt="<?php echo $planet["Name"]; ?>" id="planetImage" src="<?php echo $planet["RealisticImage"]; ?>" />
         </div>
         <div id="planetInfoContainer" class="col-md-6 col-sm-12 editable">
-          <h1 id="planetName"><?php echo $planet["Name"]; ?></h1>
           <div id="planetInfo">
             <table id="planetFacts">
               <tr>
@@ -131,7 +135,7 @@ function GetURLParameter(param){
         </div>
       </div>
     </div>
-  </div>
+
   <?php
     generatePlanetMenu($planetMenu);
   ?>

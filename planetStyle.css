@@ -43,6 +43,9 @@ body {
     color: white;
     font-family: 'Bungee Inline', cursive !important;
     font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 5em;
 }
 
 #planetInfo {
@@ -57,6 +60,7 @@ body {
   width: 100%;
   bottom: 0;
   padding: 25px;
+  margin-top: 15px;
 }
 
 .planet {
@@ -174,7 +178,8 @@ body {
 .planetNavigateBtn {
     color: white;
     font-size: 4em;
-    transition:all 120ms ease-in-out;
+    -webkit-transition: all 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition:         all 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .planetNavigateBtn:hover {
@@ -219,11 +224,12 @@ body {
 
 #backBtn .fa {
     margin-right: 10px;
-    transition: all 120ms ease-in-out;
+    -webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 #backBtn:hover .fa {
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 #backBtn a {
@@ -231,25 +237,56 @@ body {
     text-decoration: none !important;
 }
 
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 800px) {
   #planetNavigateContainer{
-    display: none;
+    position: absolute;
+    z-index: 9999999999999;
   }
 
-  #mainContainer{
-    padding:10px;
+  .container {
+    padding: 25px;
   }
 
-  #planetMenu .planet {
-      margin-left: unset !important;
-      margin-top: unset !important;
-      position: relative;
-      width: 50% !important;
-      transform: unset;
-      float: left;
-      clear: both;
-      left: 27%;
-      margin-bottom: 30px;
+  .planet {
+    width: 50% !important;
+    margin: 0 auto !important;
+    margin-bottom: 25px !important;
+  }
+
+  #planetMenu {
+    display: unset;
+    justify-content: unset;
+    align-items: unset;
+  }
+
+  .planetName {
+    display: block;
+    font-size: 2em;
+    position: unset;
+  }
+
+
+  .planet:hover img {
+      transform:scale(1.1) !important; /* Safari and Chrome /
+      -moz-transform:scale(1.1) !important; / Firefox /
+      -ms-transform:scale(1.1) !important; / IE 9 /
+      -o-transform:scale(1.1) !important; / Opera */
+       transform:scale(1.1) !important;
+       transform-origin: center;
+  }
+
+  #planetName {
+    margin: 65px 0px -25px 0px;
   }
 
 }

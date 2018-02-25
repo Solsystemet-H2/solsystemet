@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 include("config.php");
 
-$connect = dbConnect("127.0.0.1","root","pass","solsystemDB");
+$connect = dbConnect("localhost","root","","solsystemdb");
 $site = selectRow($connect, "Site", "*", "ID", "1", "", "", "", "");
 ?>
 <!DOCTYPE html>
@@ -27,6 +27,7 @@ $site = selectRow($connect, "Site", "*", "ID", "1", "", "", "", "");
     <link rel="stylesheet" href="scripts/font-awesome/css/font-awesome.min.css">
 
     <script src="scripts\particles.js\particles.min.js"></script>
+
 
 
 <script>
