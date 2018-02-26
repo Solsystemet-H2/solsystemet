@@ -19,14 +19,11 @@ var quizJSON = {
         while($levelRow = $levels->fetch_array(MYSQLI_ASSOC)){
           echo '"Level'.$ii.'":'. ["Level"];
         $ii++;
-        "level":  ,
+
         ?>
 
 
-        "level2":  "Jeopardy Contender",
-        "level3":  "Jeopardy Amateur",
-        "level4":  "Jeopardy Newb",
-        "level5":  "Stay in school, kid..." // no comma here
+
     },
     "questions": [
 
