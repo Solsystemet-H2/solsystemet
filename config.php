@@ -45,7 +45,7 @@ function selectRow($mysqli, $table, $what, $where, $field, $limit, $orderby, $or
   if ($multiple == true) { //If the variable $multiple is true
     return $result; //Return the $result
   }else{
-    $row = $result->fetch_array(MYSQLI_ASSOC); //Fetches the row from the database
+    $row = $result->fetch_array(MYSQLI_ASSOC);
     return $row; //Return row
   }
 }
