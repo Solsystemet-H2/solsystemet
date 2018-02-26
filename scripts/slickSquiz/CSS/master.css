@@ -134,3 +134,11 @@ ul.responses li.correct p span {
 .quizResultsCopy {
     margin-top: 20px;
 }
+
+#correct {
+  color: green;
+}
+
+#inCorrect {
+  color: red;
+}
