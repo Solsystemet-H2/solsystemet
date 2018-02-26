@@ -39,8 +39,8 @@ var quizJSON = {
                 }
                 ?>
             ],
-            "correct": "<p><span>That's right!</span> The letter A is the first letter in the alphabet!</p>",
-            "incorrect": "<p><span>Uhh no.</span> It's the first letter of the alphabet. Did you actually <em>go</em> to kindergarden?</p>" // no comma here
+            "correct": "<?php echo $row["CorrectText"];?>",
+            "incorrect": "<?php echo $row["IncorrectText"];?>" // no comma here
         }
         <?php
       }

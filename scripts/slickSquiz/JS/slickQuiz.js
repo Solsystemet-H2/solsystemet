@@ -7,7 +7,7 @@
         var plugin = this;
 
         var defaults = {
-            checkAnswerText:  'Check My Answer!',
+            checkAnswerText:  'Tjek mine svar',
             nextQuestionText: 'Next &raquo;',
             backButtonText: '',
             randomSort: false,
