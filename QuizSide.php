@@ -42,13 +42,14 @@
     });
     </script>
 </head>
-<body id="particles-js">
+<body id="particles-js" class="centerMe">
 
-  <div id="backBtn"><a href="index.php"><i class="fa fa-chevron-left" aria-hidden="true"></i>Tilbage til solsystemet</a></div>
+<div id="backBtn" class="fixed"><a href="index.php"><i class="fa fa-chevron-left" aria-hidden="true"></i>Tilbage til solsystemet</a></div>
 
-  <div class="CenterMe">
-    <iframe id="quizFrame" src="quiz.php" style="border:0px;"></iframe>
-  </div>
+
+<iframe id="quizFrame" src="quiz.php" style="border:0px;"></iframe>
+
+
 </body>
 
 </html>
