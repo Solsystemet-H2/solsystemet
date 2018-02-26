@@ -251,7 +251,7 @@ body {
 @media only screen and (max-width: 800px) {
   #planetNavigateContainer{
     position: absolute;
-    z-index: 9999999999999;
+    z-index: 999999;
   }
 
   .container {
@@ -276,6 +276,17 @@ body {
     position: unset;
   }
 
+  .planetNavigateBtn {
+      font-size: 3em;
+  }
+
+  .planetNavigateBtn:hover {
+      font-size: 3.5em;
+  }
+
+  #planetImageContainer {
+    padding: 0px 25px;
+  }
 
   .planet:hover img {
       transform:scale(1.1) !important; /* Safari and Chrome /
