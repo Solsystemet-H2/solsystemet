@@ -59,7 +59,7 @@ function generatePlanetMenu($mysqliResult){
     while($row = $mysqliResult->fetch_array(MYSQLI_ASSOC)){ //While there is a row available to fetch, take and put into the variable $row
       ?>
       <div id="<?php echo $row["StyleID"]; //Get the id from the database ?>" class="planet" onclick="window.location = 'planet.php?id=<?php echo $row["ID"]; //Get the planet ID from the database ?>'">
-      <img title="<?php echo $row["Name"]; //Get the name from the database?>" alt="<?php echo $row["Name"]; //Get the name from the database ?>" src="<?php echo $row["CartoonImage"]; //Get the cartoon image url from the database ?>" />
+      <img title="<?php echo $row["Name"]; //Get the name from the database ?>" alt="<?php echo $row["Name"]; //Get the name from the database ?>" src="<?php echo $row["CartoonImage"]; //Get the cartoon image url from the database ?>" />
       <div class="planetName"><?php echo $row["Name"]; //Get the name from the database ?></div>
       </div>
       <?php
