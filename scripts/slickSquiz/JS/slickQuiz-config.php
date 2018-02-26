@@ -24,7 +24,7 @@ var quizJSON = {
       $resultCount = mysqli_num_rows ($questions);
       $i = 1;
       while($row = $questions->fetch_array(MYSQLI_ASSOC)){
-        $answers = selectRow($connect, "AnswerOption", "*", "QuestionID", echo $row["Question"], "", "", "", true);
+        $answers = selectRow($connect, "AnswerOption", "*", "QuestionID", $row["QuestionID"], "", "", "", true);
         ?>
         {
             "q": "<?php echo $row["Question"];?>",
