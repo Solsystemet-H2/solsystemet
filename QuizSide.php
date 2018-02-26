@@ -7,6 +7,7 @@
 
     <title>Sol Systemet</title>
 
+    <!-- Load javascript files and style sheets start -->
     <link rel="stylesheet" href="planetStyle.css">
 
     <script src="scripts/jquery-3.2.1.min.js"></script>
@@ -20,22 +21,19 @@
     <link rel="stylesheet" href="scripts/font-awesome/css/font-awesome.min.css">
 
     <script src="scripts\particles.js\particles.min.js"></script>
-
+    <!-- Load javascript files and style sheets end -->
 
     <script>
-    $(function() {
-      particlesJS.load('particles-js', 'scripts/particles.js/spaceBG.json', function() {});
-      $("#siteText").mCustomScrollbar({
+    $(function() { //When DOM is ready do the following
+      particlesJS.load('particles-js', 'scripts/particles.js/spaceBG.json', function() {}); //Create the "stars" (particles) using the particlesJS Jquery plugin
+      $("#siteText").mCustomScrollbar({ //Add custom scrollbar using the mCustomSCrollbar jQuery Plugin
         scrollInertia:100,
         mouseWheel:{ scrollAmount: 50 },
       });
 
-      $(".planet").on("click",function(){
-        window.location = "planet.php?id="+$(this).attr("id");
-      });
 
 
-      window.addEventListener("message", function (event) {
+      window.addEventListener("message", function (event) { 
         document.getElementById("quizFrame").style.height = event.data;
       });
 
