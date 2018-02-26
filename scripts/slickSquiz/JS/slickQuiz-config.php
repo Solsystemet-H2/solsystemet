@@ -1,6 +1,6 @@
 <?php
   ini_set('display_errors', 1);
-  include("../../../config.php");
+  include($_SERVER['DOCUMENT_ROOT']."/config.php");
 
   //$connect = dbConnect("localhost","root","","solsystemdb2");
   $connect = dbConnect("localhost","root","pass","solsystemDB");
