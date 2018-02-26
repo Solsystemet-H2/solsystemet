@@ -5,12 +5,14 @@
   //$connect = dbConnect("localhost","root","","solsystemdb2");
   $connect = dbConnect("localhost","root","pass","solsystemDB");
   $questions = selectRow($connect, "Question", "*", "", "", "", "", "", true);
+  $levels = selectRow($connect, "Level", "*", "", "", "", "LevelID", "ASC", "");
+  $quiz = selectRow($connect, "Quiz", "*", "", "", "", "", "", "");
 ?>
 <script>
 var quizJSON = {
     "info": {
-        "name":    "Test Your Knowledge!!",
-        "main":    "<p>Think you're smart enough to be on Jeopardy? Find out with this super crazy knowledge quiz!</p>",
+        "name":    "<?php echo $quiz["Title"];?>",
+        "main":    "<?php echo $quiz["Subtitle"];?>",
         "results": "<h5>Learn More</h5><p>Etiam scelerisque, nunc ac egestas consequat, odio nibh euismod nulla, eget auctor orci nibh vel nisi. Aliquam erat volutpat. Mauris vel neque sit amet nunc gravida congue sed sit amet purus.</p>",
         "level1":  "Jeopardy Ready",
         "level2":  "Jeopardy Contender",
