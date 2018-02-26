@@ -241,8 +241,8 @@ body {
 #quizBtn {
     color: white;
     font-size: 1.2em;
-    margin-left: 25px;
-    margin-top: 50px;
+    margin-right: 25px;
+    float: right;
     margin-bottom: -50px;
     position: relative;
     z-index: 99999999;
