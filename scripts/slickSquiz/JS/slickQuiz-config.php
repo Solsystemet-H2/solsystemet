@@ -1,22 +1,22 @@
 <?php
-  ini_set('display_errors', 1);//Enable phgp errors
-  include($_SERVER['DOCUMENT_ROOT']."/config.php"); //tba
+  ini_set('display_errors', 1);
+  include($_SERVER['DOCUMENT_ROOT']."/config.php");
 
   //$connect = dbConnect("localhost","root","","solsystemdb2");
-  $connect = dbConnect("localhost","root","pass","solsystemDB"); //Server DB connect string
-  $questions = selectRow($connect, "Question", "*", "", "", "", "", "", true); //Select question text
-  $levels = selectRow($connect, "Level", "*", "", "", "", "LevelID", "ASC", true); //Select level text
-  $quiz = selectRow($connect, "Quiz", "*", "", "", "", "", "", ""); //Select quiz title, main and results
+  $connect = dbConnect("localhost","root","pass","solsystemDB");
+  $questions = selectRow($connect, "Question", "*", "", "", "", "", "", true);
+  $levels = selectRow($connect, "Level", "*", "", "", "", "LevelID", "ASC", true);
+  $quiz = selectRow($connect, "Quiz", "*", "", "", "", "", "", "");
 ?>
 <script>
-var quizJSON = { //JSON file for the slickQuiz plugin
+var quizJSON = {
     "info": {
         "name":    "<?php echo $quiz["Title"];?>",
         "main":    "<?php echo $quiz["Subtitle"];?>",
         "results": "<?php echo $quiz["EndResult"];?>",
         <?php
         $ii = 1;
-        while($levelRow = $levels->fetch_array(MYSQLI_ASSOC)){ //while there are entrys in the table, keep going and echo the value
+        while($levelRow = $levels->fetch_array(MYSQLI_ASSOC)){
           echo '"level'.$ii.'":"'.$levelRow["Level"].'",';
         $ii++;
 }
@@ -30,7 +30,7 @@ var quizJSON = { //JSON file for the slickQuiz plugin
       <?php
 
       $i = 1;
-      while($row = $questions->fetch_array(MYSQLI_ASSOC)){//while there are entrys in the table, keep going and echo the value
+      while($row = $questions->fetch_array(MYSQLI_ASSOC)){
         $answers = selectRow($connect, "AnswerOption", "*", "QuestionID", $row["QuestionID"], "", "", "", true);
         ?>
         {
@@ -39,15 +39,16 @@ var quizJSON = { //JSON file for the slickQuiz plugin
               <?php
 
                 $i2 = 1;
-                while($row2 = $answers->fetch_array(MYSQLI_ASSOC)){// for each question loop trough answers for that question and echo
+                while($row2 = $answers->fetch_array(MYSQLI_ASSOC)){
                   ?>
                     {"option": "<?php echo $row2["Answer"];?>",      "correct": <?php if($row2["CorrectAnswer"] == 1){echo "true";}else{echo "false";}?>},
                   <?php
                 }
                 ?>
             ],
-            "correct": "<span id ='correct'><?php echo $row["CorrectText"];?></span>", //text for correct answer
-            "incorrect": "<span id = 'inCorrect'><?php echo $row["IncorrectText"];?></span>" // text for incorrect answer
+            "correct": "<span id ='correct'><?php echo $row["CorrectText"];?></span>",
+            "incorrect": "<span id = 'inCorrect'><?php echo $row["IncorrectText"];?></span>" // no comma here
+        },
         <?php
       }
       ?>
