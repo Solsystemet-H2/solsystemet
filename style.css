@@ -355,7 +355,6 @@ body {
   animation-play-state: paused;
 }
 
-
 @media only screen and (max-width: 1000px) {
   body{
     overflow: auto;
