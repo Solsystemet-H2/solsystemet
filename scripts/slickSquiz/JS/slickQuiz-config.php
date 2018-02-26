@@ -34,14 +34,14 @@ var quizJSON = {
                 $i2 = 1;
                 while($row2 = $answers->fetch_array(MYSQLI_ASSOC)){
                   ?>
-                    {"option": "<?php echo $row2["Answer"];?>",      "correct": <?php if($row2["CorrectAnswer"] == 1){echo "true";}else{echo "false";}?>}
+                    {"option": "<?php echo $row2["Answer"];?>",      "correct": <?php if($row2["CorrectAnswer"] == 1){echo "true";}else{echo "false";}?>},
                   <?php
                 }
                 ?>
             ],
             "correct": "<?php echo $row["CorrectText"];?>",
             "incorrect": "<?php echo $row["IncorrectText"];?>" // no comma here
-        }
+        },
         <?php
       }
       ?>
