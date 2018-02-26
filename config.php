@@ -2,15 +2,15 @@
 //Create a connection to the database
 //Requires a host (ip), username, password and the database name
 function dbConnect($host, $user, $pass, $database){
-  $mysqli=mysqli_connect($host, $user, $pass, $database);
-  $mysqli->set_charset('utf8');
+  $mysqli=mysqli_connect($host, $user, $pass, $database); //Connect the database using the values the user defined
+  $mysqli->set_charset('utf8'); //Set the charset to UTF-8 so we won't hve any issues with special characters
 
-  if ($mysqli->connect_errno) {
-      printf("Connect failed: %s\n", $mysqli->connect_error);
-      exit();
+  if ($mysqli->connect_errno) { //If the connection encounters an error
+      printf("Connect failed: %s\n", $mysqli->connect_error); //Write the error
+      exit(); //Exit the function
   }
 
-  return $mysqli; 
+  return $mysqli; //Return the connection
 }
 
 //Close the connection to the database
@@ -29,21 +29,21 @@ function selectRow($mysqli, $table, $what, $where, $field, $limit, $orderby, $or
   $insertLimit = "";
   $insertOrder = "";
 
-  if($where != "" && $field != ""){ //If $where and $field isn't empty
-    $insertWhere = "WHERE LOWER($where) = LOWER('$field')"; //Updates the $insertWhere variable to contain the WHERE condition
+  if($where != "" && $field != ""){ //If where and field isn't empty
+    $insertWhere = "WHERE LOWER($where) = LOWER('$field')"; //Updates the insertWhere variable to contain the WHERE condition
   }
-  if($limit != ""){ //If $limit isn't empty
+  if($limit != ""){ //If limit isn't empty
   }
-  $insertLimit = "LIMIT $limit"; //Updates the $insertLimit variable to contain the LIMIT condition
-  if($orderby != "" && $orderType != ""){ //If $orderby and $orderType isn't empty
-    $insertOrder = "ORDER BY ".$orderby." ".strtoupper($orderType); //Updates the $insertOrder variable to contain the ORDER BY condition
+  $insertLimit = "LIMIT $limit"; //Updates the insertLimit variable to contain the LIMIT condition
+  if($orderby != "" && $orderType != ""){ //If orderby and orderType isn't empty
+    $insertOrder = "ORDER BY ".$orderby." ".strtoupper($orderType); //Updates the insertOrder variable to contain the ORDER BY condition
   }
 
   $query = "SELECT $what FROM $table $insertWhere $insertOrder $insertLimit"; //Construct the sql query
   $result = $mysqli->query($query); //Convert it to an sql element
 
-  if ($multiple == true) { //If the variable $multiple is true
-    return $result; //Return the $result
+  if ($multiple == true) { //If the variable multiple is true
+    return $result; //Return the result
   }else{
     $row = $result->fetch_array(MYSQLI_ASSOC); //Fetches the row from the database
     return $row; //Return row
