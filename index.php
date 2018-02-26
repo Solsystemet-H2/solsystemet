@@ -2,7 +2,8 @@
 ini_set('display_errors', 1);
 include("config.php");
 
-$connect = dbConnect("localhost","root","","solsystemdb2");
+//$connect = dbConnect("localhost","root","","solsystemdb2");
+$connect = dbConnect("localhost","root","pass","solsystemDB");
 $site = selectRow($connect, "Site", "*", "ID", "1", "", "", "", "");
 $planets = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
 $planetMenu = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
@@ -29,9 +30,6 @@ $planetMenu = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "AS
     <link rel="stylesheet" href="scripts/font-awesome/css/font-awesome.min.css">
 
     <script src="scripts\particles.js\particles.min.js"></script>
-
-
-
 <script>
 $(function() {
   particlesJS.load('particles-js', 'scripts/particles.js/spaceBG.json', function() {});

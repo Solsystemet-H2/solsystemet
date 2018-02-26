@@ -10,7 +10,7 @@
 <script src="scripts/slickSquiz/JS/slickQuiz.js"></script>
 
 <link href="scripts/slickSquiz/CSS/reset.css" media="screen" rel="stylesheet" type="text/css">
-<link href="scripts/slickSquiz/CSS/slickQuiz.css" media="screen" rel="stylesheet" type="text/css">
+<!--<link href="scripts/slickSquiz/CSS/slickQuiz.css" media="screen" rel="stylesheet" type="text/css">-->
 <link href="scripts/slickSquiz/CSS/master.css" media="screen" rel="stylesheet" type="text/css">
 
 <link href="quizStyle.css" media="screen" rel="stylesheet" type="text/css">
@@ -33,7 +33,11 @@ $(window).on("load",function(){
 function resizeNotify() {
     window.parent.postMessage($('body').height() + "px", "*");
 }
+
 </script>
+<?php
+  include("scripts/slickSquiz/JS/slickQuiz-config.php");
+?>
 </head>
 <body id="spaceQuiz">
   <div class="test">
