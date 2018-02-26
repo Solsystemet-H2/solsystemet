@@ -301,4 +301,10 @@ body {
     margin: 65px 0px -25px 0px;
   }
 
+  .fixed {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
 }
