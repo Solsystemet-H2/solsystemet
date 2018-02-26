@@ -1,15 +1,16 @@
 <?php
-ini_set('display_errors', 1);
+ini_set('display_errors', 1); //Enable phgp errors
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 
+<!-- Load javascript files and style sheets start -->
 <link rel="stylesheet" href="scripts/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="scripts/font-awesome/css/font-awesome.min.css">
 
 <script src="scripts/slickSquiz/JS/jquery-1.7.min.js"></script>
-<!--<script src="scripts/slickSquiz/JS/slickQuiz-config.js"></script>-->
+
 <script src="scripts/slickSquiz/JS/slickQuiz.js"></script>
 
 <link href="scripts/slickSquiz/CSS/reset.css" media="screen" rel="stylesheet" type="text/css">
@@ -17,10 +18,10 @@ ini_set('display_errors', 1);
 <link href="scripts/slickSquiz/CSS/master.css" media="screen" rel="stylesheet" type="text/css">
 
 <link href="quizStyle.css" media="screen" rel="stylesheet" type="text/css">
-
+<!-- Load javascript files and style sheets end -->
 <script>
-$(function () {
-    $('#spaceQuiz').slickQuiz();
+$(function () { //When DOM is ready do the following
+    $('#spaceQuiz').slickQuiz(); //Generates quiz from the jQuery plugin slickQuiz
 
     window.addEventListener("resize", function () {
         resizeNotify();
@@ -39,9 +40,10 @@ function resizeNotify() {
 
 </script>
 <?php
-  include("scripts/slickSquiz/JS/slickQuiz-config.php");
+  include("scripts/slickSquiz/JS/slickQuiz-config.php"); //includes the config file for the slickQuiz plugin
 ?>
 </head>
+<!--body contains the elements changed in the config file-->
 <body id="spaceQuiz">
   <div class="test">
     <h1 class="quizName"></h1>
