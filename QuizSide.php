@@ -44,7 +44,7 @@
 </head>
 <body id="particles-js" class="centerMe">
 
-
+<div id="backBtn"><a href="index.php"><i class="fa fa-chevron-left" aria-hidden="true"></i>Tilbage til solsystemet</a></div>
 
 
 <iframe id="quizFrame" src="quiz.php" style="border:0px;"></iframe>
