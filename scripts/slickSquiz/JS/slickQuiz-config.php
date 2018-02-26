@@ -49,7 +49,7 @@ var quizJSON = { //JSON file for the slickQuiz plugin
             "correct": "<span id ='correct'><?php echo $row["CorrectText"];?></span>", //text for correct answer
             "incorrect": "<span id = 'inCorrect'><?php echo $row["IncorrectText"];?></span>" // text for incorrect answer
         <?php
-      },
+      }
       ?>
     ]
 };
