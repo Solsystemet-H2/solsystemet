@@ -1,4 +1,4 @@
-/* Load fonts from google font */
+/* Loads custom fonts from google font */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
 
@@ -343,7 +343,7 @@ body {
     width: 50%;
     margin: 0 auto;
     margin-bottom: 50px;
-    cursor: pointer;
+    cursor: pointer; /* Set the cursor to pointer (the pointing hand) when the mouse is over the element */
     transition: all 150ms ease-in-out; /* Animates changes made e.g. when hovering */
 }
 

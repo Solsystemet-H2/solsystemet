@@ -1,15 +1,13 @@
+/* Loads custom fonts from google font */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
 
 *:not(.fa) {
-    font-family: 'Montserrat', sans-serif !important;
-}
-
-body {
+    font-family: 'Montserrat', sans-serif !important; /* Set every text besides fontawesome fonts to "Monsterrat" */
 }
 
 #particles-js canvas{
-    position: fixed;
+    position: fixed; /* Makes sure the element is always where it's styled, even when scrolling on the page */
     width: 100%;
     height: 100%;
     left: 0;
@@ -29,9 +27,16 @@ body {
 
 #mainContainer{
   position: unset;
+  /* Flex box settings start */
+  /* The following 3 commands make up what is known as a "flex box" */
+  /*
+    If no other position or display style is located on any of this elements children
+    it will center them both horizontal and vertical
+  */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Flex box settings end */
   width: 100%;
   height: 100%;
   margin-top: 5%;
@@ -54,9 +59,16 @@ body {
 
 
 #planetMenu{
+  /* Flex box settings start */
+  /* The following 3 commands make up what is known as a "flex box" */
+  /*
+    If no other position or display style is located on any of this elements children
+    it will center them both horizontal and vertical
+  */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Flex box settings end */
   width: 100%;
   bottom: 0;
   padding: 25px;
@@ -103,16 +115,24 @@ body {
     text-align: center;
     font-weight: 700;
     margin-top: 5px;
+    /* Flex box settings start */
+    /* The following commands make up what is known as a "flex box" */
+    /*
+      If no other position or display style is located on any of this elements children
+      it will center them both horizontal and vertical
+    */
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    /* Flex box settings end */
     position: absolute;
     left: 0%;
     right: 0%;
     display: none;
 }
 
+/* Sets the width of the different planets for the planet menu */
 #sun {
     width: 5vw;
     margin: 0px
@@ -159,27 +179,34 @@ body {
     margin-bottom: 15px;
 }
 
-#planetFacts td:nth-child(odd) {
+#planetFacts td:nth-child(odd) { /* This style will only be applied for every other td in our table */
     font-weight: 600;
     padding-right: 50px;
     padding-bottom: 5px;
 }
 
 #planetNavigateContainer {
-    position: fixed;
+    position: fixed; /* Makes sure the element is always where it's styled, even when scrolling on the page */
     height: 100%;
     width: 100%;
     top: 0;
+    /* Flex box settings start */
+    /* The following 3 commands make up what is known as a "flex box" */
+    /*
+      If no other position or display style is located on any of this elements children
+      it will center them both horizontal and vertical
+    */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Flex box settings end */
 }
 
 .planetNavigateBtn {
     color: white;
     font-size: 4em;
-    -webkit-transition: all 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition:         all 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transition: all 400ms cubic-bezier(0.645, 0.045, 0.355, 1); /* Animates changes made e.g. when hovering (optimized for other browsers) */
+    transition:         all 400ms cubic-bezier(0.645, 0.045, 0.355, 1); /* Animates changes made e.g. when hovering */
 }
 
 .planetNavigateBtn:hover {
@@ -190,13 +217,13 @@ body {
 #prevPlanet {
     position: absolute;
     left: 25px;
-    cursor: pointer;
+    cursor: pointer; /* Set the cursor to pointer (the pointing hand) when the mouse is over the element */
 }
 
 #nextPlanet {
     position: absolute;
     right: 25px;
-    cursor: pointer;
+    cursor: pointer; /* Set the cursor to pointer (the pointing hand) when the mouse is over the element */
 }
 
 #quizFrame {
@@ -207,9 +234,16 @@ body {
 }
 
 .centerMe{
+  /* Flex box settings start */
+  /* The following 3 commands make up what is known as a "flex box" */
+  /*
+    If no other position or display style is located on any of this elements children
+    it will center them both horizontal and vertical
+  */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Flex box settings end */
 }
 
 #backBtn {
@@ -220,13 +254,13 @@ body {
     margin-bottom: -50px;
     position: relative;
     z-index: 99999999;
-    cursor: pointer;
+    cursor: pointer; /* Set the cursor to pointer (the pointing hand) when the mouse is over the element */
 }
 
 #backBtn .fa {
     margin-right: 10px;
-    -webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1); /* Animates changes made e.g. when hovering (optimized for other browsers) */
+    transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1); /* Animates changes made e.g. when hovering */
 }
 
 #backBtn:hover .fa {
@@ -234,8 +268,8 @@ body {
 }
 
 #backBtn a {
-    color: white !important;
-    text-decoration: none !important;
+    color: white !important; /* Sets the color of the link to white, the !important makes sure that it applies for all states of the link (hover, focus, active and visited) */
+    text-decoration: none !important; /* Removes the underline of the link when hovering !important makes sure that it applies for all states of the link (hover, focus, active and visited) */
 }
 
 #quizBtn {
@@ -251,8 +285,8 @@ body {
 
 #quizBtn .fa {
     margin-left: 10px;
-    -webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1); /* Animates changes made e.g. when hovering (optimized for other browsers) */
+    transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1); /* Animates changes made e.g. when hovering */
 }
 
 #quizBtn:hover .fa {
@@ -260,26 +294,21 @@ body {
 }
 
 #quizBtn a {
-    color: white !important;
-    text-decoration: none !important;
+  color: white !important; /* Sets the color of the link to white, the !important makes sure that it applies for all states of the link (hover, focus, active and visited) */
+  text-decoration: none !important; /* Removes the underline of the link when hovering !important makes sure that it applies for all states of the link (hover, focus, active and visited) */
 }
 .fixed {
-  position: fixed !important;
+  position: fixed !important; /* Makes sure the element is always where it's styled, even when scrolling on the page */
   top: 15px;
   left: 15px;
 }
 
 
-
-
-
-
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a308c57cd3e5f243a4deb6a8ab38b94e0fd338f1
+/*
+  If the screen size if below 800px
+  the following styles will become active,
+  and makes the page abit more friendly to smaller screens
+*/
 @media only screen and (max-width: 800px) {
   #planetNavigateContainer{
     position: absolute;
@@ -291,9 +320,9 @@ body {
   }
 
   .planet {
-    width: 50% !important;
-    margin: 0 auto !important;
-    margin-bottom: 25px !important;
+    width: 50% !important; /* the !important makes it so that we can override another style, if it makes any issues */
+    margin: 0 auto !important; /* the !important makes it so that we can override another style, if it makes any issues */
+    margin-bottom: 25px !important; /* the !important makes it so that we can override another style, if it makes any issues */
   }
 
   #planetMenu {
@@ -321,11 +350,11 @@ body {
   }
 
   .planet:hover img {
-      transform:scale(1.1) !important; /* Safari and Chrome /
-      -moz-transform:scale(1.1) !important; / Firefox /
-      -ms-transform:scale(1.1) !important; / IE 9 /
-      -o-transform:scale(1.1) !important; / Opera */
-       transform:scale(1.1) !important;
+      transform:scale(1.1) !important; /* Safari and Chrome */
+      -moz-transform:scale(1.1) !important; /* Firefox */
+      -ms-transform:scale(1.1) !important; /* IE 9 */
+      -o-transform:scale(1.1) !important; /* Opera */
+       transform:scale(1.1) !important; /* Increases the size of the element when hovered */
        transform-origin: center;
   }
 
