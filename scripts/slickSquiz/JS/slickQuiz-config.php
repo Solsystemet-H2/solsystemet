@@ -34,14 +34,14 @@ var quizJSON = {
                 $i2 = 1;
                 while($row2 = $answers->fetch_array(MYSQLI_ASSOC)){
                   ?>
-                    {"option": "<?php echo $row2["Answer"];?>",      "correct": <?php if($row2["CorrectAnswer"] == 1){echo "true";}else{echo "false";}?>}
+                    {"option": "<?php echo $row2["Answer"];?>",      "correct": <?php if($row2["CorrectAnswer"] == 1){echo "true";}else{echo "false";}?>},
                   <?php
                 }
                 ?>
             ],
-            "correct": "<p><span>That's right!</span> The letter A is the first letter in the alphabet!</p>",
-            "incorrect": "<p><span>Uhh no.</span> It's the first letter of the alphabet. Did you actually <em>go</em> to kindergarden?</p>" // no comma here
-        }
+            "correct": "<span id ='correct'><?php echo $row["CorrectText"];?></span>",
+            "incorrect": "<span id = 'inCorrect'><?php echo $row["IncorrectText"];?></span>" // no comma here
+        },
         <?php
       }
       ?>
