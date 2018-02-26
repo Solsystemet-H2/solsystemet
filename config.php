@@ -36,13 +36,15 @@ function selectRow($mysqli, $table, $what, $where, $field, $limit, $orderby, $or
   }
 
   $query = "SELECT $what FROM $table $insertWhere $insertOrder $insertLimit";
+echo $query;
+  die();
   $result = $mysqli->query($query);
 
   if ($multiple == true) {
     return $result;
   }else{
     $row = $result->fetch_array(MYSQLI_ASSOC);
-    return $row; 
+    return $row;
   }
 }
 
