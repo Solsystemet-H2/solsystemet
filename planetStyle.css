@@ -238,39 +238,11 @@ body {
     text-decoration: none !important;
 }
 
-
-#quizBtn {
-    color: white;
-    font-size: 1.2em;
-    margin-left: 25px;
-    margin-top: 50px;
-    margin-bottom: -50px;
-    position: relative;
-    z-index: 99999999;
-    cursor: pointer;
-}
-
-#quizBtn .fa {
-    margin-right: 10px;
-    -webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-#quizBtn:hover .fa {
-    margin-right: 20px;
-}
-
-#quizBtn a {
-    color: white !important;
-    text-decoration: none !important;
-}
-
 .fixed {
-  position: fixed;
+  position: fixed !important;
   top: 20px;
   left: 20px;
 }
-
 
 
 
