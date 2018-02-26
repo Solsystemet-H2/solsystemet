@@ -1,22 +1,22 @@
 <?php
-ini_set('display_errors', 1);
-include("config.php");
+ini_set('display_errors', 1); //Enable phgp errors
+include("config.php"); //Include our php config file, that contains our php functions
 
-//$connect = dbConnect("localhost","root","","solsystemdb2");
-$connect = dbConnect("localhost","root","pass","solsystemDB");
-$site = selectRow($connect, "Site", "*", "ID", "1", "", "", "", "");
-$planets = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
-$planetMenu = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "ASC", true);
+//$connect = dbConnect("localhost","root","","solsystemdb2"); //Local DB connect string
+$connect = dbConnect("localhost","root","pass","solsystemDB"); //Server DB connect string
+$site = selectRow($connect, "Site", "*", "ID", "1", "", "", "", ""); //Select frontpage site text
+$planets = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "ASC", true); //Select all planets and order them by thier order in the solar system
+$planetMenu = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "ASC", true); //Select all planets again for the menu and order them by thier order in the solar system
 ?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sol Systemet</title>
 
+    <!-- Load javascript files and style sheets start -->
     <link rel="stylesheet" href="style.css">
 
     <script src="scripts/jquery-3.2.1.min.js"></script>
@@ -30,18 +30,21 @@ $planetMenu = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "AS
     <link rel="stylesheet" href="scripts/font-awesome/css/font-awesome.min.css">
 
     <script src="scripts\particles.js\particles.min.js"></script>
+    <!-- Load javascript files and style sheets end -->
 <script>
-$(function() {
-  particlesJS.load('particles-js', 'scripts/particles.js/spaceBG.json', function() {});
-  $("#siteText").mCustomScrollbar({
+$(function() { //On DOM ready do the following
+  particlesJS.load('particles-js', 'scripts/particles.js/spaceBG.json', function() {}); //Create the "stars" (particles) using the particlesJS Jquery plugin
+
+  $("#siteText").mCustomScrollbar({ //Add custom scrollbar using the mCustomSCrollbar jQuery Plugin
     scrollInertia:150,
     mouseWheel:{ scrollAmount: 20 },
   });
 
-  $(".planet").on("click",function(){
-    window.location = "planet.php?id="+$(this).attr("planetOrder");
+  $(".planet").on("click",function(){ //When a planet is clicked
+    window.location = "planet.php?id="+$(this).attr("planetOrder"); //Send it to the planet.php site along with it's custom attribute planetOrder
   });
 
+  //Make the all the planets start from a random position start
   $("#orbit1, #orbit1 .pos, #mercury .planetShadow").css("animation-delay", "-"+randomStartPos(3)+"s");
   $("#orbit2, #orbit2 .pos, #venus .planetShadow").css("animation-delay", "-"+randomStartPos(7)+"s");
   $("#orbit3, #orbit3 .pos, #earth .planetShadow").css("animation-delay", "-"+randomStartPos(12)+"s");
@@ -51,14 +54,14 @@ $(function() {
   $("#orbit7, #orbit7 .pos, #uranus .planetShadow").css("animation-delay", "-"+randomStartPos(1008)+"s");
   $("#orbit8, #orbit8 .pos, #neptune .planetShadow").css("animation-delay", "-"+randomStartPos(1977)+"s");
   $("#orbit9, #orbit9 .pos, #pluto .planetShadow").css("animation-delay", "-"+randomStartPos(3500)+"s");
-
+  //Make the all the planets start from a random position end
 });
 
-function randomStartPos(maxNum){
+function randomStartPos(maxNum){ //Returns a random number between 0 and and a max user defined number
   return Math.floor(Math.random() * (maxNum - 0 + 1)) + 0;
 }
 
-function pauseSolarSystem(){
+function pauseSolarSystem(){ //Pause the solar system by adding a class containing: "animation-play-state: paused;"
   $("#orbit1, #orbit1 .pos, #mercury .planetShadow").addClass("pauseAnimation");
   $("#orbit2, #orbit2 .pos, #venus .planetShadow").addClass("pauseAnimation");
   $("#orbit3, #orbit3 .pos, #earth .planetShadow").addClass("pauseAnimation");
@@ -70,7 +73,7 @@ function pauseSolarSystem(){
   $("#orbit9, #orbit9 .pos, #pluto .planetShadow").addClass("pauseAnimation");
 }
 
-function startSolarSystem(){
+function startSolarSystem(){ //Continues the solar system by removing a class containing: "animation-play-state: paused;"
   $("#orbit1, #orbit1 .pos, #mercury .planetShadow").removeClass("pauseAnimation");
   $("#orbit2, #orbit2 .pos, #venus .planetShadow").removeClass("pauseAnimation");
   $("#orbit3, #orbit3 .pos, #earth .planetShadow").removeClass("pauseAnimation");
@@ -93,16 +96,16 @@ function startSolarSystem(){
   </div>
   <div id="siteText">
     <?php
-      echo nl2br($site["Content"]);
+      echo nl2br($site["Content"]); //Gets the site content from the database from the field in the database called: "Content"
     ?>
   </div>
   <?php
-  generateFrontPage($planets);
-  generatePlanetMenuFpage($planetMenu);
+  generateFrontPage($planets); //Generate the solar system
+  generatePlanetMenuFpage($planetMenu); //Generate responsive planet menu
   ?>
 </body>
 
 </html>
 <?php
-  dbDisconnect($connect);
+  dbDisconnect($connect); //Closes the connection to the database
 ?>
