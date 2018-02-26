@@ -19,32 +19,35 @@ function dbDisconnect($mysqli){
   mysqli_close($mysqli); //Close the connection defined by the user
 }
 
+//Select one or multiple rows from the database
+//Requires: Connection to the database, database table, what we want to select,
+//from where we want it, WHERE condition and with a field reference, LIMIT condition,
+//ORDERBY condition with field and type (ASC or DESC) and if it you want one or multiple reqults
 function selectRow($mysqli, $table, $what, $where, $field, $limit, $orderby, $orderType, $multiple){
-
+  //Defines global function variables
   $insertWhere = "";
   $insertLimit = "";
   $insertOrder = "";
 
-  if($where != "" && $field != ""){
-    $insertWhere = "WHERE LOWER($where) = LOWER('$field')";
+  if($where != "" && $field != ""){ //If $where and $field isn't empty
+    $insertWhere = "WHERE LOWER($where) = LOWER('$field')"; //Updates the $insertWhere variable to contain the WHERE condition
   }
-  if($limit != ""){
-  }
-  $insertLimit = "LIMIT $limit";
-  if($orderby != "" && $orderType != ""){
-    $insertOrder = "ORDER BY ".$orderby." ".strtoupper($orderType);
+  if($limit != ""){ //If $limit isn't empty
+    $insertLimit = "LIMIT $limit"; //Updates the $insertLimit variable to contain the LIMIT condition
   }
 
-  $query = "SELECT $what FROM $table $insertWhere $insertOrder $insertLimit";
-echo $query;
-  die();
-  $result = $mysqli->query($query);
+  if($orderby != "" && $orderType != ""){ //If $orderby and $orderType isn't empty
+    $insertOrder = "ORDER BY ".$orderby." ".strtoupper($orderType); //Updates the $insertOrder variable to contain the ORDER BY condition
+  }
 
-  if ($multiple == true) {
-    return $result;
+  $query = "SELECT $what FROM $table $insertWhere $insertOrder $insertLimit"; //Construct the sql query
+  $result = $mysqli->query($query); //Convert it to an sql element
+
+  if ($multiple == true) { //If the variable $multiple is true
+    return $result; //Return the $result
   }else{
-    $row = $result->fetch_array(MYSQLI_ASSOC);
-    return $row;
+    $row = $result->fetch_array(MYSQLI_ASSOC); //Fetches the row from the database
+    return $row; //Return row
   }
 }
 
