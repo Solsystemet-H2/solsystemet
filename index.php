@@ -94,6 +94,9 @@ function startSolarSystem(){ //Continues the solar system by removing a class co
     <div title="Play" class="btn btn-info" onclick="startSolarSystem();"><i class="fa fa-play" aria-hidden="true"></i></div>
     <div title="Pause" class="btn btn-info" onclick="pauseSolarSystem();"><i class="fa fa-pause" aria-hidden="true"></i></div>
   </div>
+  <div id="quizButton">
+  <a title="Prøv vores Quiz her" class="btn btn-primary" href="QuizSide.php">Prøv vores Quiz her</a>
+</div>
   <div id="siteText">
     <?php
       echo nl2br($site["Content"]); //Gets the site content from the database from the field in the database called: "Content"
