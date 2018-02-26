@@ -8,7 +8,7 @@
 
         var defaults = {
             checkAnswerText:  'Tjek mine svar',
-            nextQuestionText: 'Next &raquo;',
+            nextQuestionText: 'Næste &raquo;',
             backButtonText: '',
             randomSort: false,
             randomSortQuestions: false,
@@ -108,7 +108,7 @@
                         };
 
                         // prepare a name for the answer inputs based on the question
-                        var inputName  = 'question' + (count - 1);
+                        var inputName  = 'Spørgsmål' + (count - 1);
 
                         // Now let's append the answers with checkboxes or radios depending on truth count
                         var answerHTML = $('<ul class="answers"></ul>');

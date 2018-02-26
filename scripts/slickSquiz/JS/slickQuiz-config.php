@@ -39,8 +39,8 @@ var quizJSON = {
                 }
                 ?>
             ],
-            "correct": "<?php echo $row["CorrectText"];?>",
-            "incorrect": "<?php echo $row["IncorrectText"];?>" // no comma here
+            "correct": <span id="correct">"<?php echo $row["CorrectText"];?>"</span>,
+            "incorrect": <span id = "inCorrect">"<?php echo $row["IncorrectText"];?>"</span> // no comma here
         },
         <?php
       }
