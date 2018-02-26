@@ -19,7 +19,7 @@ var quizJSON = {
         while($levelRow = $levels->fetch_array(MYSQLI_ASSOC)){
           echo '"level'.$ii.'":'.$levels["Level"].',';
         $ii++;
-
+}
         ?>
 
 
