@@ -32,7 +32,7 @@ $planetMenu = selectRow($connect, "Planet", "*", "", "", "", "PlanetsOrder", "AS
     <script src="scripts\particles.js\particles.min.js"></script>
     <!-- Load javascript files and style sheets end -->
 <script>
-$(function() { //On DOM ready do the following
+$(function() { //When DOM is ready do the following
   particlesJS.load('particles-js', 'scripts/particles.js/spaceBG.json', function() {}); //Create the "stars" (particles) using the particlesJS Jquery plugin
 
   $("#siteText").mCustomScrollbar({ //Add custom scrollbar using the mCustomSCrollbar jQuery Plugin
@@ -100,8 +100,8 @@ function startSolarSystem(){ //Continues the solar system by removing a class co
     ?>
   </div>
   <?php
-  generateFrontPage($planets); //Generate the solar system
-  generatePlanetMenuFpage($planetMenu); //Generate responsive planet menu
+  generateFrontPage($planets); //Generate the solar system and send along our database query to the PHP function
+  generatePlanetMenuFpage($planetMenu); //Generate responsive planet menu and send along our database query to the PHP function
   ?>
 </body>
 
