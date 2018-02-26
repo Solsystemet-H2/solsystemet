@@ -31,10 +31,8 @@ var quizJSON = {
             "a": [
               <?php
                 $resultCount2 = mysqli_num_rows ($answers);
-                echo $resultCount2;
                 $i2 = 1;
                 while($row2 = $answers->fetch_array(MYSQLI_ASSOC)){
-                  $i2++;
                   ?>
                     {"option": "<?php echo $row2["Answer"];?>",      "correct": <?php if($row2["CorrectAnswer"] == 1){echo "true";}else{echo "false";}?>}<?php if($i2 != $resultCount2){echo ",";} ?>
                   <?php
