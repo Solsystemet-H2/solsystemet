@@ -265,8 +265,8 @@ body {
 }
 .fixed {
   position: fixed !important;
-  top: 20px;
-  left: 20px;
+  top: 15px;
+  left: 15px;
 }
 
 
