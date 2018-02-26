@@ -6,11 +6,11 @@
 <link rel="stylesheet" href="scripts/font-awesome/css/font-awesome.min.css">
 
 <script src="scripts/slickSquiz/JS/jquery-1.7.min.js"></script>
-<script src="scripts/slickSquiz/JS/slickQuiz-config.js"></script>
+<!--<script src="scripts/slickSquiz/JS/slickQuiz-config.js"></script>-->
 <script src="scripts/slickSquiz/JS/slickQuiz.js"></script>
 
 <link href="scripts/slickSquiz/CSS/reset.css" media="screen" rel="stylesheet" type="text/css">
-<!--<link href="scripts/slickSquiz/CSS/slickQuiz.css" media="screen" rel="stylesheet" type="text/css">-->
+<link href="scripts/slickSquiz/CSS/slickQuiz.css" media="screen" rel="stylesheet" type="text/css">
 <link href="scripts/slickSquiz/CSS/master.css" media="screen" rel="stylesheet" type="text/css">
 
 <link href="quizStyle.css" media="screen" rel="stylesheet" type="text/css">
