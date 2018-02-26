@@ -1,22 +1,24 @@
+/* Load fonts from google font */
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
 @import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
 
 *:not(.fa) {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important; /* Set every text besides fontawesome fonts to "Monsterrat" */
 }
 
 body {
-    overflow: hidden;
+    overflow: hidden; /* Hides the scrollbars */
 }
 
 #particles-js canvas{
-    position: fixed;
+    position: fixed; /* Makes sure the element is always where it's styled, even when scrolling on the page */
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
     z-index: -1;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#001523+0,000000+100 */
+    /* Gives the background an gradient besides the "stars" */
     background: #001a3f !important;
     background: -moz-radial-gradient(center, ellipse cover, #001a3f 0%, #000000 100%) !important;
     background: -webkit-radial-gradient(center, ellipse cover, #001a3f 0%,#000000 100%) !important;
@@ -65,8 +67,8 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d;
-    transform: rotateX(75deg);
+    transform-style: preserve-3d; /* Makes it possible to have an "3d" effect where objects can hide behind others */
+    transform: rotateX(75deg); /* tilt the shole space container 75 degreed forward */
 }
 
 .planet {
@@ -78,11 +80,11 @@ body {
   margin-top: -0.5em;
   margin-left: -0.5em;
   border-radius: 50%;
-  transform-style: preserve-3d;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  cursor: pointer;
-  pointer-events: all;
+  transform-style: preserve-3d; /* Makes it possible to have an "3d" effect where objects can hide behind others */
+  animation-iteration-count: infinite; /* Makes sure that our animation is running forever */
+  animation-timing-function: linear; /* Specifies the speed curve of an animation  */
+  cursor: pointer; /* Set the cursor to pointer (the pointing hand) when the mouse is over the element */
+  pointer-events: all; /* Makes the planets clickable again, because the parent isn't clickable */
 }
 
 .planetShadow{
@@ -91,17 +93,17 @@ body {
   height: 100%;
   border-radius: 100%;
   z-index: 9999999;
-  animation-name: planetShadow;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-name: planetShadow; /* The name of the animation running the shadow on the planets */
+  animation-iteration-count: infinite; /* Makes sure that our animation is running forever */
+  animation-timing-function: ease-in-out; /* Specifies the speed curve of an animation  */
 }
 
 #saturnShadow{
   width: 0.58em;
   height: 0.58em;
   z-index: 999999;
-  left: 0.205em !important;
-  top: 0.05em !important;
+  left: 0.205em !important; /* the !important makes it so that we can override another style, if it makes any issues */
+  top: 0.05em !important; /* the !important makes it so that we can override another style, if it makes any issues */
   position: absolute;
   left: 0px;
   top: 0px;
@@ -110,25 +112,24 @@ body {
   padding: 10%;
   border-radius: 100%;
   z-index: 9999999;
-  animation-name: planetShadow;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  pointer-events: none;
+  animation-name: planetShadow; /* The name of the animation running the shadow on the planets */
+  animation-iteration-count: infinite; /* Makes sure that our animation is running forever */
+  animation-timing-function: ease-in-out; /* Specifies the speed curve of an animation  */
+  pointer-events: none; /* Makes the shadow of saturn not clickable */
 }
 
 
 .planet img{
   width: 100%;
-  transition: all 80ms ease-in-out;
   position: absolute;
 }
 
-.pos {
+.pos { /* Fixes the position of the planet so that it looks normal when rotating instead of lying down */
   position: absolute;
-  transform-style: preserve-3d;
-  animation-name: invert;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  transform-style: preserve-3d; /* Makes it possible to have an "3d" effect where objects can hide behind others */
+  animation-name: invert; /* The name of the animation running the shadow on the planets */
+  animation-iteration-count: infinite; /* Makes sure that our animation is running forever */
+  animation-timing-function: linear; /* Specifies the speed curve of an animation  */
 }
 
 .planetName {
@@ -140,13 +141,13 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-size: 16px !important;
+  font-size: 16px !important; /* the !important makes it so that we can override another style, if it makes any issues */
   margin-top: 115%;
-  transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out; /* Animates changes made e.g. when hovering */
 }
 
-.planet:hover .planetName {
-    font-size: 20px !important;
+.planet:hover .planetName { /* Make changes to .planetName when .planet is hovered */
+    font-size: 20px !important; /* the !important makes it so that we can override another style, if it makes any issues */
 }
 
 #saturn .planetName {
@@ -157,8 +158,8 @@ body {
     margin-top: 105%;
 }
 
-#sun, #orbit1, #orbit2, #orbit3, #orbit4, #orbit5, #orbit6, #orbit7, #orbit8, #orbit9{
-  transition: all 200ms ease-in-out;
+#sun, #orbit1, #orbit2, #orbit3, #orbit4, #orbit5, #orbit6, #orbit7, #orbit8, #orbit9{ /* Target all of the orbits */
+  transition: all 200ms ease-in-out; /* Make changes to .planetName when .planet is hovered */
 }
 
 .pos{
@@ -168,7 +169,7 @@ body {
 
 #sun {
   font-size: 20em;
-  transform: rotateX(-75deg);
+  transform: rotateX(-75deg); /* tilt the shole space container 75 degreed backwards, so the sun isn't laying down */
 }
 
 .planet:not(#sun){
@@ -182,13 +183,19 @@ body {
   left: 50%;
   border: 3px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  animation-name: planetOrbit;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  transform-style: preserve-3d;
-  pointer-events: none;
+  animation-name: planetOrbit; /* The name of the animation running the shadow on the planets */
+  animation-iteration-count: infinite; /* Makes sure that our animation is running forever */
+  animation-timing-function: linear; /* Specifies the speed curve of an animation  */
+  transform-style: preserve-3d; /* Makes it possible to have an "3d" effect where objects can hide behind others */
+  pointer-events: none; /* Makes the orbit not clickable */
 }
 
+
+/*
+  Sets the sizes of the different orbits
+  By using the em units we can manage the sizes a bit better based on our font size.
+  1em is equal to 1 * font-size
+*/
 #orbit1 {
   font-size: 2em;
   width: 15em;
@@ -261,6 +268,11 @@ body {
   margin-left: -45em;
 }
 
+
+/*
+  Set the individual times it takes
+  for each planet to do one rotation around the sun
+*/
 #orbit1, #orbit1 .pos, #mercury .planetShadow {
   animation-duration: 3s;
 }
@@ -298,6 +310,7 @@ body {
 }
 
 
+
 #siteText {
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
@@ -331,7 +344,7 @@ body {
     margin: 0 auto;
     margin-bottom: 50px;
     cursor: pointer;
-    transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out; /* Animates changes made e.g. when hovering */
 }
 
 .responsivePlanetName {
@@ -342,7 +355,7 @@ body {
 }
 
 #saturnResponsive img {
-    width: 150% !important;
+    width: 150% !important; /* the !important makes it so that we can override another style, if it makes any issues */
     margin-left: -23%;
 }
 
@@ -352,25 +365,30 @@ body {
 
 
 .pauseAnimation{
-  animation-play-state: paused;
+  animation-play-state: paused; /* Pauses any animation on an element where this class is added */
 }
 
+/*
+  If the screen size if below 1000px
+  the following styles will become active,
+  and makes the page abit more friendly to smaller screens
+*/
 @media only screen and (max-width: 1000px) {
   body{
-    overflow: auto;
+    overflow: auto; /* Shows the scrollbars if the content of the page is bigger than the screen */
   }
 
   #spaceContainer {
-    display: none;
+    display: none; /* Hide the solar system */
   }
 
   #title {
-    height: auto !important;
+    height: auto !important; /* the !important makes it so that we can override another style, if it makes any issues */
     margin-bottom: 0px;
   }
 
   #particles-js canvas{
-      position: fixed;
+      position: fixed; /* Makes sure the element is always where it's styled, even when scrolling on the page */
       width: 100%;
       height: 100%;
       left: 0;
@@ -389,45 +407,19 @@ body {
   }
 
   #responsivePlanetsContainer {
-      display: block;
+      display: block; /* Shows the responsive vertical planet menu */
   }
 
   #solarSystemControls{
-    display: none;
+    display: none; /* Hide the solar system play and pause buttons */
   }
 }
 
-@keyframes planetOrbit {
-  0%   { transform: rotateZ(0deg); }
-  100% { transform: rotateZ(-360deg); }
-}
-
 /*
-@keyframes planetShadow {
-  0%     { box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); }
-  25%    { box-shadow: inset 16px 0 8px rgba(0, 0, 0, 0.5); }
-  50%    { box-shadow: inset 40px -20px 16px rgba(0, 0, 0, 0.5);}
-  50.01% { box-shadow: inset -40px -20px 16px rgba(0, 0, 0, 0.5); }
-  75%    { box-shadow: inset -16px 0 8px rgba(0, 0, 0, 0.5); }
-  100%   { box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); }
-}
+  If the screen size if below 1919px
+  the following styles will become active,
+  and makes the page abit more friendly to smaller screens
 */
-
-@keyframes planetShadow {
-  0% { box-shadow: inset 0 0 0.4em rgba(0, 0, 0, 0.5); }
-  25% { box-shadow: inset 0.3em 0 0.15em rgba(0, 0, 0, 0.5); }
-  50% { box-shadow: inset 1em -0.4em 0.3em rgba(0, 0, 0, 0.5); }
-  50.01% { box-shadow: inset -1em -0.4em 0.3em rgba(0, 0, 0, 0.5); }
-  75% { box-shadow: inset -0.3em 0 0.15em rgba(0, 0, 0, 0.5); }
-  100% { box-shadow: inset 0 0 0.4em rgba(0, 0, 0, 0.5); }
-}
-
-@keyframes invert {
-  0%   { transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg); }
-  100% { transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg); }
-}
-
-
 
 @media only screen and (max-width: 1919px) {
   #sun {
@@ -471,6 +463,11 @@ body {
   }
 }
 
+/*
+  If the screen size if below 1660px
+  the following styles will become active,
+  and makes the page abit more friendly to smaller screens
+*/
 @media only screen and (max-width: 1660px) {
   #sun {
     font-size: 11em;
@@ -513,6 +510,12 @@ body {
   }
 }
 
+/*
+  If the screen size if below 1345px
+  the following styles will become active,
+  and makes the page abit more friendly to smaller screens
+*/
+
 @media only screen and (max-width: 1345px) {
   #sun {
     font-size: 7em;
@@ -553,4 +556,25 @@ body {
   #orbit9 {
     font-size: 0.785em;
   }
+}
+
+/*  The animation keyframes for our individual animations */
+
+@keyframes planetOrbit { /* Rotate the orbit along with all children (planets) */
+  0%   { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(-360deg); }
+}
+
+@keyframes planetShadow { /* Make the shadow on the planets so it gives the planet a bit more "3d feel" using box-shadow */
+  0% { box-shadow: inset 0 0 0.4em rgba(0, 0, 0, 0.5); }
+  25% { box-shadow: inset 0.3em 0 0.15em rgba(0, 0, 0, 0.5); }
+  50% { box-shadow: inset 1em -0.4em 0.3em rgba(0, 0, 0, 0.5); }
+  50.01% { box-shadow: inset -1em -0.4em 0.3em rgba(0, 0, 0, 0.5); }
+  75% { box-shadow: inset -0.3em 0 0.15em rgba(0, 0, 0, 0.5); }
+  100% { box-shadow: inset 0 0 0.4em rgba(0, 0, 0, 0.5); }
+}
+
+@keyframes invert { /* Puts the planets in upright position so the planets don't lie down when rotating around the sun */
+  0%   { transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg); }
+  100% { transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg); }
 }
