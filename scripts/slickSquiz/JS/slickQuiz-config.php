@@ -31,6 +31,7 @@ var quizJSON = {
             "a": [
               <?php
                 $resultCount2 = mysqli_num_rows ($answers);
+                echo $resultCount2;
                 $i2 = 1;
                 while($row2 = $answers->fetch_array(MYSQLI_ASSOC)){
                   $i2++;
