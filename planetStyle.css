@@ -238,7 +238,6 @@ body {
     text-decoration: none !important;
 }
 
-
 #quizBtn {
     color: white;
     font-size: 1.2em;
@@ -251,13 +250,13 @@ body {
 }
 
 #quizBtn .fa {
-    margin-right: 10px;
+    margin-left: 10px;
     -webkit-transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
     transition:         all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 #quizBtn:hover .fa {
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
 #quizBtn a {
@@ -270,6 +269,7 @@ body {
   top: 20px;
   left: 20px;
 }
+
 
 
 

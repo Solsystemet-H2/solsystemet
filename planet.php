@@ -87,7 +87,7 @@ function GetURLParameter(param){ //Get a user defined parameter from the URL
 
 <body id="particles-js">
   <div id="backBtn"><a href="index.php"><i class="fa fa-chevron-left" aria-hidden="true"></i>Tilbage til solsystemet</a></div>
-  <div id="quizBtn"><a href="QuizSide.php"><i class="fa fa-chevron-right" aria-hidden="true"></i>Prøv vores quiz her!</a></div>
+  <div id="quizBtn"><a href="QuizSide.php">Prøv vores quiz her!<i class="fa fa-chevron-right" aria-hidden="true"></i></a></div>
   <div id="planetNavigateContainer">
     <div id="planetNavigateCenter">
       <div id="prevPlanet" class="planetNavigateBtn"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
