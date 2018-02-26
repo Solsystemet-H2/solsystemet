@@ -136,9 +136,9 @@ ul.responses li.correct p span {
 }
 
 #correct {
-  color: green;
+  color: #38e038;
 }
 
 #inCorrect {
-  color: red;
+  color: #f44336;
 }
