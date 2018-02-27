@@ -368,7 +368,8 @@
   #quizFrame{
     margin-top: 10%;
     width: 100%;
-    margin: 140px 15px;    
+    margin: 140px 15px;
+    min-width: auto;
   }
 
 }
