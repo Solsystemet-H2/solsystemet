@@ -10,7 +10,4 @@ body {
   padding:0px !important;
   border:none !important;
   overflow:hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

@@ -362,4 +362,8 @@
     margin: 65px 0px -25px 0px;
   }
 
+  #quizBtn {
+      margin-top: 25px;
+  }
+
 }
