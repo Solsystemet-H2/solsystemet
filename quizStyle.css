@@ -6,8 +6,8 @@
 }
 
 body {
-  margin:0px !important;
   padding:0px !important;
   border:none !important;
   overflow:hidden;
+  margin-bottom: 50px;
 }

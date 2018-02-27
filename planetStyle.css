@@ -230,7 +230,6 @@
   margin-top: 10%;
   width: 50%;
   min-width: 800px;
-
 }
 
 .centerMe{
@@ -364,6 +363,12 @@
 
   #quizBtn {
       margin-top: 25px;
+  }
+
+  #quizFrame{
+    margin-top: 10%;
+    width: 100%;
+    margin: 140px 15px;    
   }
 
 }
