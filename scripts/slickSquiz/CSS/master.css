@@ -141,3 +141,7 @@ ul.responses li.correct p span {
 #inCorrect {
   color: #f44336;
 }
+
+.startQuiz{
+  display:block !important;
+}
