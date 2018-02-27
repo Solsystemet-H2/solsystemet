@@ -15,9 +15,6 @@
     <link rel="stylesheet" href="scripts/bootstrap/css/bootstrap.min.css">
     <script src="scripts\bootstrap\js\bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="scripts/mCustomScrollbar/mCustomScrollbar.min.css">
-    <script src="scripts\mCustomScrollbar\mCustomScrollbar.min.js"></script>
-
     <link rel="stylesheet" href="scripts/font-awesome/css/font-awesome.min.css">
 
     <script src="scripts\particles.js\particles.min.js"></script>
@@ -26,14 +23,11 @@
     <script>
     $(function() { //When DOM is ready do the following
       particlesJS.load('particles-js', 'scripts/particles.js/spaceBG.json', function() {}); //Create the "stars" (particles) using the particlesJS Jquery plugin
-      $("#siteText").mCustomScrollbar({ //Add custom scrollbar using the mCustomSCrollbar jQuery Plugin
-        scrollInertia:100,
-        mouseWheel:{ scrollAmount: 50 },
-      });
 
 
 
-      window.addEventListener("message", function (event) { 
+
+      window.addEventListener("message", function (event) { //Rezize the iframe so its fits quiz.php (height)
         document.getElementById("quizFrame").style.height = event.data;
       });
 

@@ -28,13 +28,13 @@ $(function () { //When DOM is ready do the following
     });
 });
 
-$(window).on("load",function(){
+$(window).on("load",function(){ //runs rezizeNotify every half second
   window.setInterval(function(){
     resizeNotify();
   }, 500);
 });
 
-function resizeNotify() {
+function resizeNotify() { //sends a message to parent with size if located inside iframe
     window.parent.postMessage($('body').height() + "px", "*");
 }
 

@@ -1,6 +1,6 @@
 <?php
   ini_set('display_errors', 1);//Enable phgp errors
-  include($_SERVER['DOCUMENT_ROOT']."/config.php"); //tba
+  include($_SERVER['DOCUMENT_ROOT']."/config.php"); ////Include our php config file, that contains our php functions
 
   //$connect = dbConnect("localhost","root","","solsystemdb2");
   $connect = dbConnect("localhost","root","pass","solsystemDB"); //Server DB connect string
