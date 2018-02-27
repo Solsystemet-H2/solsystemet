@@ -143,5 +143,5 @@ ul.responses li.correct p span {
 }
 
 .startQuiz{
-  display:block !important;
+  display:block;
 }
